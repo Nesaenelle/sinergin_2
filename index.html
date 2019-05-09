@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Sinergin 2</title>
+    <link rel="stylesheet" href="public/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <!-- Fix for iOS Safari zooming bug -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="title" content="Как дольше не стареть? Комплекс антиоксидантов Синергин поможет продлить молодость!">
+    <meta name="description" content="Сохранить молодость кожи и замедлить старение всего организма помогают антиоксиданты. Синергин – это Q10, каротиноиды, рутин и витамины для молодости и энергии!">
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-wrapper">
+            <header>
+                <div class="container">
+                    <a class="logo" href="#home" @click.prevent="navigation($event)">СИНЕРГИН <sub>®</sub></a>
+                    <nav>
+                        <ul>
+                            <li><a href="#reasons" @click.prevent="navigation($event)"> <span> ПРИЧИНЫ СТАРЕНИЯ </span></a></li>
+                            <li><a href="#solution" @click.prevent="navigation($event)"> <span> РЕШЕНИЕ</span></a></li>
+                            <li><a href="#sinergin" @click.prevent="navigation($event)"> <span> СИНЕРГИН</span></a></li>
+                            <li><a href="#efficiency" @click.prevent="navigation($event)"> <span> ДОКАЗАННАЯ
+                                        ЭФФЕКТИВНОСТЬ</span></a></li>
+                            <li><a href="#feedback" @click.prevent="navigation($event)"> <span> ОТЗЫВЫ</span></a></li>
+                        </ul>
+                    </nav>
+                    <div class="right">
+                        <button class="btn" @click.stop="openModal('pharmacy')">ГДЕ КУПИТЬ?</button>
+                        <div class="burger" @click.stop="toggleMenu()" :class="{opened: showMenu}">
+                            <span></span>
+                        </div>
+                        <div class="dropdown-menu" :class="{opened: showMenu}" ref="menu">
+                            <button class="btn" @click.stop="openModal('pharmacy')">ГДЕ КУПИТЬ?</button>
+                            <nav>
+                                <ul>
+                                    <li><a href="#reasons" @click.prevent="navigation($event)"> <span> ПРИЧИНЫ СТАРЕНИЯ
+                                            </span></a></li>
+                                    <li><a href="#solution" @click.prevent="navigation($event)"> <span> РЕШЕНИЕ</span></a></li>
+                                    <li><a href="#sinergin" @click.prevent="navigation($event)"> <span> СИНЕРГИН</span></a></li>
+                                    <li><a href="#efficiency" @click.prevent="navigation($event)"> <span> ДОКАЗАННАЯ
+                                                ЭФФЕКТИВНОСТЬ</span></a></li>
+                                    <li><a href="#feedback" @click.prevent="navigation($event)"> <span> ОТЗЫВЫ</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div data-navigation="home"></div>
+                <section id="how-to-slow-section">
+                    <div class="container">
+                        <h2 class="title">Как победить усталость?</h2>
+                        <p>Синергин – антиоксидантный комплекс для повышения работоспособности и продуктивности</p>
+                        <img src="img/sinergin.png" alt="">
+                    </div>
+                </section>
+                <section id="aging-section" data-navigation="reasons">
+                    <div class="container">
+                        <h2 class="title">Насколько сильно вы устали?</h2>
+                        <p class="animate" v-animate="'slide-right'">Вам не хочется вставать по утрам? Жизнь перестала играть яркими красками? Нет сил на общение с семьей, друзьями? Давно не посвящали себя любимому увлечению? Возможно, стоит признать, что вы устали! Это не слабость характера и не лень, а состояние, которое рано или поздно возникает у перегруженного делами и ответственностью человека. </p>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <h2>Лень или усталость? </h2>
+                        <div>Проверьте себя по тесту Китаоки!</div>
+                        <div>
+                            <div>Внимательно посмотрите на картинку и выберите верный вариант ответа:</div>
+                            <div><img src="img/test1.png" alt="">
+                                <ul>
+                                    <li>Картинка неподвижна</li>
+                                    <li>Картинка медленно движется</li>
+                                    <li>Картинка быстро движется</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <h2>Как распознать усталость?</h2>
+                        <div><img src="img/slepee.svg" alt="">
+                            <h3>Сонливость и вялость</h3>По утрам вы с трудом просыпаетесь и ощущаете себя уже уставшим. Часто чувствуете себя так, будто долго занимались физической работой.
+                        </div>
+                        <div><img src="img/bomb.svg" alt="">
+                            <h3>Психическое и эмоциональное истощение</h3>Замкнутость, раздражительность, нежелание разговаривать и общаться.
+                        </div>
+                        <div><img src="img/snail.svg" alt="">
+                            <h3>Время реакции</h3>Вы медленно реагируете на происходящее, включая опасные для жизни ситуации. Роняете предметы, чувствуете себя неуклюжим.
+                        </div>
+                        <div><img src="img/pain.svg" alt="">
+                            <h3>Боль в мышцах</h3>Без видимой причины вы ощущаете дискомфорт в мышцах, суставах, особенно рук и ног. Вам не хочется двигаться.
+                        </div>
+                        <div><img src="img/hardwork.svg" alt="">
+                            <h3>Низкая работоспособность</h3>Вы стали медленнее выполнять свою обычную работу. Можете отказаться от обязанностей по дому, вам не хватает сил на хобби или уход за собой.
+                        </div>
+                        <div><img src="img/concentration.svg" alt="">
+                            <h3>Ухудшение концентрации и внимания</h3>Забывчивость, рассеянность, плохая кратковременная память, сложно сосредоточиться на том, что читаете или слушаете.
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <h2>Факторы, которые приводят к образованию избытка свободных радикалов в организме:</h2>
+                        <div><img src="" alt="">Воздействие электромагнитного излучения</div>
+                        <div><img src="" alt="">Постоянные стрессы</div>
+                        <div><img src="" alt="">Загрязнение воздуха выхлопными газами и производственными выбросами </div>
+                        <div><img src="" alt="">Контакт с пестицидами</div>
+                        <div><img src="" alt="">Курение, в том числе пассивное</div>
+                        <div><img src="" alt="">Консерванты в продуктах и косметике</div>
+                        <div><img src="" alt="">Лишний вес</div>
+                        <div><img src="" alt="">Нитраты в продуктах питания</div>
+                        <div><img src="" alt="">Низкая физическая активность</div>
+                        <div><img src="" alt="">Хронические заболевания</div>
+                    </div>
+                </section>
+                <section id="antioxidants-section" data-navigation="solution">
+                    <div class="container">
+                        <h2 class="title">Вернуть продуктивность и восстановить
+                            энергетический баланс помогут
+                            антиоксиданты!</h2>
+                        <div class="antioxidants-list">
+                            <div class="antioxidants-list__item animate" v-animate="'slide-left'"><img class="antioxidants-list__item--img" src="img/sheild.svg" alt="">
+                                <div class="antioxidants-list__item--text">
+                                    Антиоксиданты нейтрализуют свободные радикалы, поэтому процессы выработки энергии восстанавливаются. </div>
+                            </div>
+                            <div class="antioxidants-list__item animate" v-animate="'slide-left'"><img class="antioxidants-list__item--img" src="img/sheild.svg" alt="">
+                                <div class="antioxidants-list__item--text">Антиоксиданты сами участвуют в выработке энергии внутри организма. Прием антиоксидантов увеличивает выработку энергии.
+                                </div>
+                            </div>
+                        </div>
+                        <div>Принимай антиоксиданты – верни себе продуктивность и энергию!</div>
+                        <div class="antioxidants-images animate" v-animate="'slide-right'">
+                            <!-- <div class="antioxidants-images__item"></div>
+                                    <div class="antioxidants-images__item"></div> -->
+                            <img data-src="img/girlmid.png" alt="">
+                        </div>
+                    </div>
+                </section>
+                <section class="buy-section buy-section--top" data-navigation="sinergin">
+                    <div class="container">
+                        <div class="buy-section__product">
+                            <img class="buy-section__product-img" src="img/sinergin.png" alt="">
+                            <a target="_blank" class="pdf-link" href="https://sinergin.ru/themes/sinergin/assets/Sinergin.pdf">Скачать
+                                инструкцию в PDF</a>
+                        </div>
+                        <div class="wrapper">
+                            <h2 class="title">6 мощных антиоксидантов в оптимальных дозировках: </h2>
+                            <div class="antioxidants-list">
+                                <div class="antioxidants-list__item"><img data-src="img/coensim-small.svg" alt=""> Коэнзим Q<sub>10</sub></div>
+                                <div class="antioxidants-list__item"><img data-src="img/beta-karotin.svg" alt="">
+                                    Бета-каротин</div>
+                                <div class="antioxidants-list__item"><img data-src="img/likopin.svg" alt=""> Ликопин</div>
+                                <div class="antioxidants-list__item"><img data-src="img/vitamin-c.svg" alt=""> Витамин C</div>
+                                <div class="antioxidants-list__item"><img data-src="img/rutin.svg" alt=""> Рутин</div>
+                                <div class="antioxidants-list__item"><img data-src="img/vitamin-e.svg" alt=""> Витамин Е</div>
+                            </div>
+                            <div class="wrapper__buttons">
+                                <button class="btn btn-buy">
+                                    <img data-src="img/cart.svg" alt="">КУПИТЬ ОНЛАЙН
+                                    <div class="tooltip">
+                                        <a href="http://apteka.ru/catalog/sinergin-0-4-n60-kaps-_582d465a8ea5b/" target="_blank">Купить на apteka.ru</a>
+                                        <a href="http://zdravcity.ru/drugs/sinergin-kaps-komplekt-antioksidant-400mg-n60_0027990/" target="_blank">Купить на ЗдравСити</a>
+                                    </div>
+                                </button>
+                                <button class="btn btn-find" @click.stop="openModal('pharmacy')"><img data-src="img/location.svg" alt="">ГДЕ КУПИТЬ?</button>
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <h3>Компоненты действуют<br>
+                                синергично</h3>
+                            <p>Это означает, что их совместное действие значительно эффективнее, чем если бы каждый из
+                                них
+                                попадал в организм отдельно и «работал» сам по себе.</p>
+                            <img class="cell__img" src="img/cells.png" alt="">
+                        </div>
+                    </div>
+                </section>
+                <section id="antioxidants-groups-section">
+                    <div class="container">
+                        <div class="antioxidants-groups-list">
+                            <div class="antioxidants-groups-list__item">
+                                <div class="antioxidants-groups-list__item--title">Комбинация гидрофильных и липофильных
+                                    антиоксидантов для более эффективной
+                                    защиты от свободных радикалов</div>
+                                <div class="antioxidants-groups-list__item--text antioxidants-groups-list__item--text-1 animate" v-animate="'slide-left'">
+                                    <p>В нашем организме есть структуры на основе липидов (оболочки клеток и внутриклеточных органелл) и на основе воды (кровь и другие жидкости). Гидрофильные (водорастворимые) антиоксиданты защищают водные среды организма, но не способны проникать в структуры на основе липидов (жиров). Липофильные антиоксиданты, напротив, защищают мембраны клеток, но не способны нейтрализовать свободные радикалы в водных средах.</p>
+                                </div>
+                                <img data-src="img/water.jpg" alt="" class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-1 animate" v-animate="'slide-right'">
+                                <img data-src="img/link.jpg" alt="" class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-2 animate" v-animate="'slide-left'">
+                            </div>
+                            <div class="info-block animate" v-animate="'slide-left'">
+                                Синергин содержит комбинацию гидрофильных и липофильных антиоксидантов, чтобы защитить все клетки и ткани организма, а также кровь от вредного действия свободных радикалов.
+                            </div>
+                            <div class="antioxidants-groups-list__item--title">Как работают компоненты Синергина?</div>
+                            <div class="antioxidants-groups-list__item">
+                                <div class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-3 animate" v-animate="'slide-left'">
+                                    <img data-src="img/coensim.jpg" alt="">
+                                </div>
+                                <div class="antioxidants-groups-list__item--text animate" v-animate="'slide-right'">
+                                    <h3>Коэнзим Q<sub>10</sub></h3>
+                                    <p> Ключевой участник процессов выработки энергии, в том числе в мышцах. </p>
+                                    <p> Препятствует развитию астенического синдрома, СХУ и депрессивных состояний.</p>
+                                    <p> Уменьшает усталость после физических нагрузок, придает бодрость и улучшает мышечный тонус.</p>
+                                </div>
+                            </div>
+                            <div class="antioxidants-groups-list__item">
+                                <div class="antioxidants-groups-list__item--text animate" v-animate="'slide-left'">
+                                    <h3>Витамин Е</h3>
+                                    <p> Уменьшает усталость, в том числе мышечную. </p>
+                                    <p>Улучшает концентрацию внимания, память, эмоциональный баланс. </p>
+                                    <p>Требуется для снабжения клеток кислородом, при нарушении этого процесса быстро наступает утомляемость. </p>
+                                </div>
+                                <div class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-4 animate" v-animate="'slide-right'">
+                                    <img data-src="img/avocado.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="antioxidants-groups-list__item">
+                                <div class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-5 animate" v-animate="'slide-left'">
+                                    <img data-src="img/orange.jpg" alt="">
+                                </div>
+                                <div class="antioxidants-groups-list__item--text animate" v-animate="'slide-right'">
+                                    <h3> Витамин С</h3>
+                                    <p>Способствует уменьшению усталости и утомляемости.</p>
+                                    <p>Участвует в реакциях выработки энергии.</p>
+                                    <p> Повышает тонус, нормализует работу нервной системы.</p>
+                                </div>
+                            </div>
+                            <div class="antioxidants-groups-list__item">
+                                <div class="antioxidants-groups-list__item--text animate" v-animate="'slide-left'">
+                                    <h3>Ликопин</h3>
+                                    <p> Помогает избавиться от перепадов настроения.</p>
+                                    <p> Положительно влияет на психическое здоровье. </p>
+                                </div>
+                                <div class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-6 animate" v-animate="'slide-right'">
+                                    <img data-src="img/tomato.jpg" alt="" class="tomato">
+                                </div>
+                            </div>
+                            <div class="antioxidants-groups-list__item">
+                                <div class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-7 animate" v-animate="'slide-left'">
+                                    <img data-src="img/carrot.jpg" alt="">
+                                </div>
+                                <div class="antioxidants-groups-list__item--text animate" v-animate="'slide-right'">
+                                    <h3> Бета-каротин</h3>
+                                    <p>Повышает эмоциональный фон, снижает тревожность.</p>
+                                    <p>Придает бодрость и хорошее настроение.</p>
+                                </div>
+                            </div>
+                            <div class="antioxidants-groups-list__item">
+                                <div class="antioxidants-groups-list__item--text animate" v-animate="'slide-left'">
+                                    <h3>Рутин</h3>
+                                    <p>Снижает мышечную усталость, улучшает работу мускулатуры.</p>
+                                    <p>Повышает продуктивность и работоспособность. </p>
+                                    <p>Улучшает микроциркуляцию в организме, тем самым улучшая питание всех органов и тканей. </p>
+                                    <p>Защищает сердце и сосуды от свободных радикалов. </p>
+                                </div>
+                                <div class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-8 animate" v-animate="'slide-right'">
+                                    <img data-src="img/gooseberry.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="buy-section buy-section--middle">
+                    <div class="container">
+                        <div class="wrapper">
+                            <h2 class="title">
+                                Синергин – всего 2 капсулы в день
+                                для повышения работоспособности
+                                и продуктивности.
+                            </h2>
+                            <p>
+                                Обратите внимание на экономичность! <br>
+                                1 упаковка Синергина рассчитана на целый месяц приема. <br>
+                            </p>
+                            <p>
+                                Рекомендуемая продолжительность курса: <br> 1-3 месяца.
+                            </p>
+                            <div class="wrapper__buttons">
+                                <button class="btn btn-buy">
+                                    <img data-src="img/cart.svg" alt="">КУПИТЬ ОНЛАЙН
+                                    <div class="tooltip">
+                                        <a href="http://apteka.ru/catalog/sinergin-0-4-n60-kaps-_582d465a8ea5b/" target="_blank">Купить на apteka.ru</a>
+                                        <a href="http://zdravcity.ru/drugs/sinergin-kaps-komplekt-antioksidant-400mg-n60_0027990/" target="_blank">Купить на ЗдравСити</a>
+                                    </div>
+                                </button>
+                                <button class="btn btn-find" @click.stop="openModal('pharmacy')"><img data-src="img/location.svg" alt="">ГДЕ КУПИТЬ?</button>
+                            </div>
+                        </div>
+                        <div class="buy-section__product">
+                            <img class="buy-section__product-img" src="img/sinergin-right.png" alt="">
+                            <a target="_blank" class="pdf-link" href="https://sinergin.ru/themes/sinergin/assets/Sinergin.pdf">Скачать
+                                инструкцию в PDF</a>
+                        </div>
+                    </div>
+                </section>
+                <section id="feedback-section" data-navigation="feedback">
+                    <div class="container">
+                        <h2 class="title">Отзывы потребителей</h2>
+                        <div class="feedback-list">
+                            <div class="feedback-list__item">
+                                <div class="feedback-list__item_user">
+                                    <div class="feedback-list__item_user--icon"><img data-src="img/comment-icon.svg" alt=""></div>
+                                    <div class="feedback-list__item_user--name">Юлия</div>
+                                    <div class="feedback-list__item_user--place">г. Санкт-Петербург</div>
+                                </div>
+                                <div class="feedback-list__item_details">
+                                    <div class="feedback-list__item_details--text">
+                                        Применяя Синергин, заметила общее укрепление организма. Стало легче просыпаться по утрам, чувствую бодрость в течение дня.
+                                    </div>
+                                    <!-- <div class="feedback-list__item_details--date">20.03.18</div> -->
+                                </div>
+                            </div>
+                            <div class="feedback-list__item">
+                                <div class="feedback-list__item_details">
+                                    <div class="feedback-list__item_details--text">
+                                        Нам с мужем препарат Синергин понравился, появилась бодрость, энергия. Заметили, причем оба, что улучшилось состояние ногтей.
+                                    </div>
+                                    <!-- <div class="feedback-list__item_details--date">20.03.18</div> -->
+                                </div>
+                                <div class="feedback-list__item_user">
+                                    <div class="feedback-list__item_user--icon"><img data-src="img/comment-icon.svg" alt=""></div>
+                                    <div class="feedback-list__item_user--name">Ольга</div>
+                                    <div class="feedback-list__item_user--place">г. Ульяновск </div>
+                                </div>
+                            </div>
+                            <div class="feedback-list__item">
+                                <div class="feedback-list__item_user">
+                                    <div class="feedback-list__item_user--icon"><img data-src="img/comment-icon.svg" alt=""></div>
+                                    <div class="feedback-list__item_user--name">Елена</div>
+                                    <div class="feedback-list__item_user--place">г. Домодедово</div>
+                                </div>
+                                <div class="feedback-list__item_details">
+                                    <div class="feedback-list__item_details--text">
+                                        Препарат замечательный, дает прилив бодрости, улучшает физическое состояние, увеличивает работоспособность.
+                                    </div>
+                                    <!-- <div class="feedback-list__item_details--date">20.03.18</div> -->
+                                </div>
+                            </div>
+                            <div class="feedback-list__item">
+                                <div class="feedback-list__item_details">
+                                    <div class="feedback-list__item_details--text">
+                                        Пьем Синергин совместно с супругом, почти месяц. Через 3-4 дня после первого применения почувствовали улучшение в организме, прибавилось энергии, в целом улучшилось состояние. Препарат мне очень нравится, супруг тоже очень доволен.
+                                    </div>
+                                    <!-- <div class="feedback-list__item_details--date">20.03.18</div> -->
+                                </div>
+                                <div class="feedback-list__item_user">
+                                    <div class="feedback-list__item_user--icon"><img data-src="img/comment-icon.svg" alt=""></div>
+                                    <div class="feedback-list__item_user--name">Галина</div>
+                                    <div class="feedback-list__item_user--place">г. Шахты</div>
+                                </div>
+                            </div>
+                            <div class="feedback-list__item">
+                                <div class="feedback-list__item_user">
+                                    <div class="feedback-list__item_user--icon"><img data-src="img/comment-icon.svg" alt=""></div>
+                                    <div class="feedback-list__item_user--name">Дарья</div>
+                                    <div class="feedback-list__item_user--place">г. Санкт-Петербург</div>
+                                </div>
+                                <div class="feedback-list__item_details">
+                                    <div class="feedback-list__item_details--text">
+                                        Улучшилось настроение. Появилась выносливость в спортивных тренировках. Пропало чувство, что я вечно болею.
+                                    </div>
+                                    <!-- <div class="feedback-list__item_details--date">20.03.18</div> -->
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <button class="btn btn-transparent" @click.stop="openModal('feedback')"><img data-src="img/comments.svg" alt=""> ДОБАВИТЬ ОТЗЫВ</button>
+                    </div>
+                </section>
+                <section class="buy-section buy-section--bottom">
+                    <div class="container">
+                        <div class="buy-section__product">
+                            <img class="buy-section__product-img" src="img/sinergin.png" alt="">
+                            <a target="_blank" class="pdf-link" href="https://sinergin.ru/themes/sinergin/assets/Sinergin.pdf">Скачать
+                                инструкцию в PDF</a>
+                        </div>
+                        <div class="wrapper">
+                            <h2 class="title">
+                                Тысячи людей убедились <br>
+                                в эффективности Синергина.
+                                <span> Попробуйте и вы!</span>
+                            </h2>
+                            <div class="wrapper__buttons">
+                                <button class="btn btn-buy">
+                                    <img data-src="img/cart.svg" alt="">КУПИТЬ ОНЛАЙН
+                                    <div class="tooltip">
+                                        <a href="http://apteka.ru/catalog/sinergin-0-4-n60-kaps-_582d465a8ea5b/" target="_blank">Купить на apteka.ru</a>
+                                        <a href="http://zdravcity.ru/drugs/sinergin-kaps-komplekt-antioksidant-400mg-n60_0027990/" target="_blank">Купить на ЗдравСити</a>
+                                    </div>
+                                </button>
+                                <button class="btn btn-find" @click.stop="openModal('pharmacy')"><img data-src="img/location.svg" alt="">ГДЕ КУПИТЬ?</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="">
+                <div class="container">
+                    <div class="descr">
+                        Биологическая активная добавка к пище. Не является лекарством. СГР №
+                        RU.77.99.11.003.Е.003739.08.18
+                        от 28.08.2018 г.
+                    </div>
+                    <div class="reference">
+                        <i class="icon icon-arrow"></i>
+                        <div class="reference__toggle" @click="toggleReferenceItem($event)"> Список литературы</div>
+                        <div class="reference__info">
+                            <div class="reference__info_wrapper">
+                                <div>
+                                    <div id="link-1"> 1. Hernández-Camacho JD, Bernier M, López-Lluch G1, Navas P. Coenzyme Q10
+                                        Supplementation
+                                        in Aging and Disease. Front Physiol. 2018 Feb 5;9:44.</div>
+                                    <div id="link-2">2. Žmitek K, Pogačnik T, Mervic L, Žmitek J1, Pravst I. The effect of dietary
+                                        intake of
+                                        coenzyme Q10 on skin parameters and condition: Results of a randomised,
+                                        placebo-controlled,
+                                        double-blind study. Biofactors. 2017 Jan 2;43(1):132-140.</div>
+                                    <div id="link-3">3. Monacelli F, Acquarone E, Giannotti C Borghi R, Nencioni A5. Vitamin C,
+                                        Aging
+                                        and
+                                        Alzheimer's Disease. Nutrients. 2017 Jun 27;9(7).</div>
+                                    <div id="link-4">4. Bouamama S, Merzouk H, Medjdoub A, Merzouk-Saidi A1, Merzouk SA2. Effects
+                                        of
+                                        exogenous
+                                        vitamins A, C, and E and NADH supplementation on proliferation, cytokines
+                                        release,
+                                        and cell
+                                        redox status of lymphocytes from healthy aged subjects. Appl Physiol Nutr
+                                        Metab.
+                                        2017
+                                        Jun;42(6):579-587</div>
+                                    <div id="link-5">5. Chaudhari K, Sumien N, Johnson L, D'Agostino D, Edwards M, Paxton RJ, Hall
+                                        JR,
+                                        O'Bryant
+                                        S. Vitamin C Supplementation, APOE4 Genotype and Cognitive Functioning in a
+                                        Rural-Dwelling
+                                        Cohort. J Nutr Health Aging. 2016;20(8):841-844.</div>
+                                    <div id="link-6">6. Georgousopoulou EN, Panagiotakos DB2, Mellor DD3, Naumovski N3.
+                                        Tocotrienols,
+                                        health and
+                                        ageing: A systematic review. Maturitas. 2017 Jan;95:55-60.</div>
+                                </div>
+                                <div>
+                                    <div id="link-7">7. Hemilä H. Vitamin E administration may decrease the incidence of pneumonia
+                                        in
+                                        elderly
+                                        males. Clin Interv Aging. 2016 Oct 3;11:1379-1385.</div>
+                                    <div id="link-8">8. Horvath S, Raj K3. DNA methylation-based biomarkers and the epigenetic
+                                        clock
+                                        theory of
+                                        ageing. Nat Rev Genet. 2018 Jun;19(6):371-384.</div>
+                                    <div id="link-9"> 9. Ermolaeva M1, Neri F2, Ori A3, Rudolph KL4,5. Cellular and epigenetic
+                                        drivers
+                                        of stem
+                                        cell ageing. Nat Rev Mol Cell Biol. 2018 Sep;19(9):594-610.</div>
+                                    <div id="link-10"> 10. Tümpel S, Rudolph KL. The role of telomere shortening in somatic stem
+                                        cells
+                                        and tissue
+                                        aging: lessons from telomerase model systems. Ann N Y Acad Sci. 2012
+                                        Aug;1266:28-39.</div>
+                                    <div id="link-11">11. Childs BG, Gluscevic M1, Baker DJ1,2, Laberge RM3, Marquess D3, Dananberg
+                                        J3,
+                                        van
+                                        Deursen JM1,2. Senescent cells: an emerging target for diseases of ageing. Nat
+                                        Rev
+                                        Drug
+                                        Discov. 2017 Oct;16(10):718-735.</div>
+                                    <div id="link-12">12. Regulski MJ. Cellular Senescence: What, Why, and How. Wounds. 2017
+                                        Jun;29(6):168-174.</div>
+                                    <div id="link-13">13. De Magalhães JP, Passos JF. Stress, cell senescence and organismal ageing.
+                                        Mech Ageing
+                                        Dev. 2018 Mar;170:2-9</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col logo">
+                            <img data-src="img/footer-logo.svg" alt="" class="">
+                            <b></b>
+                            <a href="https://www.akvion.ru">www.akvion.ru</a>
+                        </div>
+                        <div class="col address">
+                            123317, г. Москва, ул. Пресненская набережная, д. 8., стр. 1, МФК «Город Столиц»,
+                            Северный блок, башня Москва. Телефон: +7 (495) 780-72-34
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="hot-line"> Телефон горячей линии (с 9.00 до 18.00 по будням)</div>
+                            <a href="tel:88002008686" class="phone"> 8 800 200-86-86</a>
+                        </div>
+                        <div class="col buttons">
+                            <button class="btn btn-find" @click.stop="openModal('pharmacy')"><img data-src="img/location-white.svg" alt="">ГДЕ КУПИТЬ?</button>
+                            <button class="btn btn-transparent" @click.stop="openModal('question')"><img data-src="img/comments-footer.svg" alt=""> ЗАДАТЬ ВОПРОС</button>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class="go-top" @click="goTop()" :class="{ 'on-top': onTop }"></div>
+        </div>
+        <div class="modal" data-id="pharmacy">
+            <div class="modal-body">
+                <div class="modal-close" @click="closeModal()"></div>
+                <h2>Заказывайте Синергин в интернет-аптеках:</h2>
+                <div class="pharmacy-list">
+                    <a href="http://apteka.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/apteka_ru.png" alt="" style="    max-width: 32px;"><span>apteka.ru</span></a>
+                    <a href="http://www.piluli.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/piluli.png" alt=""><span>Piluli.ru</span></a>
+                    <a href="http://www.eapteka.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/eapteka_ru.png" alt="" style="    max-width: 32px;"><span>eаптека.ru</span></a>
+                    <a href="http://zdravcity.ru/search.php?order=Y&where=name&what=%D0%BC%D0%B5%D0%BD%D1%81%D0%B5" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/zdrav-siti.png" alt="" style="    max-width: 90px;"><span>Здрав Сити</span></a>
+                    <a href="http://lekprice.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/lek_price.png" alt=""><span>LekПрайс</span></a>
+                    <a href="http://zhivika.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/givika.png" alt=""><span>Живика</span></a>
+                    <a href="https://www.aptekaonline.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/aptekaonline.png" alt=""><span>АптекаОнлайн</span></a>
+                    <a href="https://megapteka.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/megapteka.png" alt="" style="    max-width: 100px;"><span>Мегаптека.ру</span></a>
+                    <a href="https://megapteka.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/uteka.png" alt=""><span>Ютека</span></a>
+                </div>
+                <h2>Покупайте Синергин в аптеках:</h2>
+                <div class="pharmacy-list">
+                    <a href="https://planetazdorovo.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/planet.jpg" alt="" style="    max-width: 90px;"><span>Планета здоровья</span></a>
+                    <a href="https://apteka-ot-sklada.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/ot-sklada.png" alt="" style="    max-width: 100px;"><span>Аптека от склада</span></a>
+                    <a href="https://www.proapteka.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/pro.jpg" alt="" style="    max-width: 32px;"><span>ПроАптека</span></a>
+                    <a href="http://melzdrav.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/melodiya_zdorobiya.png" alt="" style="    max-width: 30px;"><span>Мелодия здоровья</span></a>
+                    <a href="http://www.neopharm.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/neo_farm.png" alt="" style="    max-width: 40px;"><span>Нео-Фарм</span></a>
+                    <a href="http://zhivika.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/givika.png" alt=""><span>Живика</span></a>
+                    <a href="http://www.rigla.ru/shop/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/rigla.png" alt="" style="    max-width: 32px;"><span>Ригла</span></a>
+                    <a href="http://farmlend.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/farmlend.png" alt="" style="    max-width: 50px;"><span>Фармленд</span></a>
+                    <a href="http://volgofarm.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/volgofarm.png" alt="" style="    max-width: 45px;"><span>Волгофарм</span></a>
+                    <a href="http://www.nofnn.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/gos.png" alt="" style="    max-width: 45px;"><span>НОФ (Госаптека)</span></a>
+                    <a href="http://zdorov.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/dialog_zdoroviya.png" alt="" style="    max-width: 32px;"><span>Здоров.ру</span></a>
+                    <a href="https://newhospital.ru/aptechnaya-set/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/newhospital.png" alt=""><span>Новая Больница</span></a>
+                    <a href="http://www.farma-grant.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/farma_grant.png" alt="" style="    max-width: 45px;"><span>Фарма-Грант</span></a>
+                    <a href="http://www.apteka-omsk.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/semeinaya_apteka.png" alt="" style="    max-width: 40px;"><span>Аптека семейная</span></a>
+                    <a href="javascript: return false;" class="pharmacy-list__item" target="_blank"><span>Гармония здоровья</span></a>
+                    <a href="https://www.pharmeconom.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/farmeconom.png" alt="" style="    max-width: 90px;"><span>Фармэконом</span></a>
+                    <a href="http://фармаимпекс.рус" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/farmimpex.png" alt="" style="    max-width: 50px;"><span>Фармаимпекс</span></a>
+                    <a href="https://newapteka.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/new-apteka.png" alt=""><span>Новая Аптека </span></a>
+                    <a href="https://minicen.ru/" class="pharmacy-list__item" target="_blank"><img data-src="img/pharmacy/minicen.png" alt="" style="    max-width: 50px;"><span>Аптека Миницен</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="modal" data-id="feedback">
+            <div class="modal-body">
+                <div class="modal-close" @click="closeModal()"></div>
+                <h2>Добавить отзыв</h2>
+                <form>
+                    <input type="text" placeholder="Ваше имя*" required maxlength="40">
+                    <input type="text" placeholder="Город" required maxlength="40">
+                    <textarea placeholder="Текст отзыва*" required maxlength="200" required></textarea>
+                    <div class="annotation">Пункты обозначенные *, обязательны к заполнению.</div>
+                    <div class="g-recaptcha" data-sitekey="6LfiuZAUAAAAAD6BCbKl1nJ8XFmCZ46ItKDXbbQj"></div>
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                        <i></i>
+                        <span>Я согласен на обработку персональных данных</span>
+                    </label>
+                    <button class="btn" type="submit"><img data-src="img/comments-white.svg" alt=""> ОТПРАВИТЬ</button>
+                </form>
+            </div>
+        </div>
+        <div class="modal" data-id="question">
+            <div class="modal-body">
+                <div class="modal-close" @click="closeModal()"></div>
+                <h2>Задать вопрос</h2>
+                <form>
+                    <input type="text" placeholder="Ваше имя*" required maxlength="40">
+                    <input type="email" placeholder="Электронная почта*" required maxlength="40">
+                    <textarea placeholder="Задайте вопрос*" required maxlength="200"></textarea>
+                    <div class="annotation">Пункты обозначенные *, обязательны к заполнению.</div>
+                    <div class="g-recaptcha" data-sitekey="6LfiuZAUAAAAAD6BCbKl1nJ8XFmCZ46ItKDXbbQj"></div>
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                        <i></i>
+                        <span>Я согласен на обработку персональных данных</span>
+                    </label>
+                    <button class="btn" type="submit"><img data-src="img/comments-white.svg" alt=""> ОТПРАВИТЬ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.4/dist/vue.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="public/app.js"></script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+    (function(m, e, t, r, i, k, a) {
+        m[i] = m[i] || function() {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(52466218, "init", {
+        id: 52466218,
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
+    });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/52466218" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134827362-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-134827362-1');
+    </script>
+</body>
+
+</html>

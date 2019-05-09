@@ -1,0 +1,52 @@
+#how-to-slow-section {
+  background: url(../img/main-bg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0px 0px 0px;
+  height: 620px;
+    @media screen and (max-width: 980px) {
+      height: calc(100vh - 120px);
+      padding: 0;
+      display: flex;
+      align-items:center;
+    }
+    @media screen and (max-width: 600px) {
+      height: calc(100vh - 90px);
+    }
+    @media screen and (max-width: 480px) {
+      height: calc(100vh - 70px);
+    }
+  .container {
+    max-width: 1600px;
+  }
+  .title {
+    color: $c-white;
+    font-size: 80px;
+    line-height: 1.1em;
+    letter-spacing: 1px;
+    font-weight: 500;
+
+    @media screen and (max-width: 1200px) {
+      font-size: 72px;
+    }
+    @media screen and (max-width: 980px) {
+      font-size: 62px;
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 50px;
+      text-align: center;
+    }
+    @media screen and (max-width: 480px) {
+      font-size: 42px;
+    }
+  }
+  p {
+       color: $c-white;
+       font-size: 20px;
+       width: 600px;
+     }
+     img{
+      max-width: 500px;
+      width:100%;
+     }
+}
