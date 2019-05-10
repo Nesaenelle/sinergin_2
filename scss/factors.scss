@@ -1,0 +1,108 @@
+#factors-section {
+    padding: 100px 0 117px 0px;
+
+    .title {
+        color: $c-blue;
+        font-size: 50px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        display: inline-flex;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 42px;
+        }
+
+        @media screen and (max-width: 980px) {
+            font-size: 38px;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 30px;
+        }
+
+        &~.title {
+            margin-top: 76px;
+        }
+    }
+
+    .subtitle {
+        color: $c-semi-dark-blue;
+        font-size: 24px;
+        margin-top: 18px;
+        color: #22627d;
+        letter-spacing: 0.7px;
+        line-height: 1.4em;
+    }
+
+    .factor-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 0px;
+
+        // padding-right: 160px;
+        &__item {
+            width: 48%;
+            font-size: 28px;
+            color: $c-dark-blue;
+            display: flex;
+            align-items: center;
+            margin-top: 62px;
+            padding-right: 60px;
+
+            .icon {
+                margin-right: 30px;
+                display: block;
+                width: 120px;
+                min-width: 120px;
+                height: 120px;
+            }
+            &:nth-child(odd) .icon{
+            	background: url(../img/sprite1.svg);
+            	background-size: cover;
+            }
+
+            &:nth-child(even) .icon{
+            	background: url(../img/sprite2.svg);
+            	background-size: cover;
+            }
+            &:nth-child(1) .icon {
+                background-position: 0 0px;
+            }
+
+            &:nth-child(2) .icon {
+                background-position: 0 0px;
+            }
+
+            &:nth-child(3) .icon {
+                background-position: 0 -188px;
+            }
+
+            &:nth-child(4) .icon {
+                background-position: 0 -188px;
+            }
+
+            &:nth-child(5) .icon {
+                background-position: 0 -375px;
+            }
+
+            &:nth-child(6) .icon {
+                background-position: 0 -375px;
+            }
+
+            &:nth-child(7) .icon {
+                background-position: 0 -562px;
+            }
+
+            &:nth-child(8) .icon {
+                background-position: 0 -562px;
+            }
+            &:nth-child(9) .icon {
+                background-position: 0 -748px;
+            }
+            &:nth-child(10) .icon {
+                background-position: 0 -748px;
+            }
+        }
+    }
+}

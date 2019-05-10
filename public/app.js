@@ -138,7 +138,12 @@ var app = new Vue({
     el: '#app',
     data: {
         showMenu: false,
-        onTop: false
+        onTop: false,
+        testStep: 0,
+        disableTest: false,
+        testValue1: null,
+        testValue2: null,
+        testValue3: null
     },
     mounted: function mounted() {
         var _this = this;
@@ -175,7 +180,7 @@ var app = new Vue({
             }
         });
 
-        $('.hypothesis-list__item_text:first').slideDown(0);
+        // $('.hypothesis-list__item_text:first').slideDown(0);
 
         this.headerCheck();
         $(document).on('scroll', function () {
@@ -184,7 +189,7 @@ var app = new Vue({
         $(window).on('click', function (e) {
             var modal = $('.modal.opened');
 
-            if (modal && e.target.contains(modal[0])) {
+            if (modal.length && e.target.contains(modal[0])) {
                 _this.closeModal();
             }
         });
@@ -194,7 +199,7 @@ var app = new Vue({
         });
 
         window.addEventListener('click', function (e) {
-            if (!_this.$refs.menu.contains(e.target)) {
+            if (_this.$refs.menu && !_this.$refs.menu.contains(e.target)) {
                 _this.showMenu = false;
             }
         });
@@ -217,18 +222,18 @@ var app = new Vue({
             });
         }, false);
 
-        window.addEventListener('resize', function () {
-            $('.efficiency-tooltip').each(function (i, element) {
-                _this.tooltipPosition(element);
-            });
-        });
+        // window.addEventListener('resize', () => {
+        //     $('.efficiency-tooltip').each((i, element) => {
+        //         this.tooltipPosition(element);
+        //     });
+        // });
 
-        $('.efficiency-tooltip').each(function (i, element) {
-            _this.tooltipPosition(element);
-        });
-        $('.efficiency-tooltip').on('mouseenter', function (e) {
-            _this.tooltipPosition(e.currentTarget);
-        });
+        // $('.efficiency-tooltip').each((i, element) => {
+        //     this.tooltipPosition(element);
+        // });
+        // $('.efficiency-tooltip').on('mouseenter', (e) => {
+        //     this.tooltipPosition(e.currentTarget);
+        // });
     },
 
     methods: {
@@ -283,22 +288,33 @@ var app = new Vue({
             $('.modal').removeClass('opened');
             $('.main-wrapper').removeClass('opened');
         },
-        tooltipPosition: function tooltipPosition(element) {
-            var $tooltip = $(element);
-            var $content = $(element).find('.efficiency-tooltip__content');
-            var boundingTooltip = $tooltip[0].getBoundingClientRect();
-            var boundingContent = $content[0].getBoundingClientRect();
-
-            var hasSpaceRight = boundingTooltip.right + boundingContent.width < window.innerWidth - 20;
-
-            if (hasSpaceRight) {
-                $content.addClass('left');
-                $content.removeClass('right');
-            } else {
-                $content.addClass('right');
-                $content.removeClass('left');
-            }
+        nextTest: function nextTest() {
+            var vm = this;
+            vm.disableTest = true;
+            setTimeout(function () {
+                vm.testStep++;
+                vm.disableTest = false;
+            }, 500);
         }
+
+        // tooltipPosition(element) {
+        //     let $tooltip = $(element);
+        //     let $content = $(element).find('.efficiency-tooltip__content');
+        //     let boundingTooltip = $tooltip[0].getBoundingClientRect();
+        //     let boundingContent = $content[0].getBoundingClientRect();
+
+        //     let hasSpaceRight = (boundingTooltip.right + boundingContent.width < window.innerWidth - 20);
+
+        //     if (hasSpaceRight) {
+        //         $content.addClass('left');
+        //         $content.removeClass('right');
+
+        //     } else {
+        //         $content.addClass('right');
+        //         $content.removeClass('left');
+        //     }
+        // }
+
     }
 });
 

@@ -1,0 +1,111 @@
+#tired-section {
+	padding: 88px 0 182px 0;
+	background: #43a2dc;
+	overflow: hidden;
+	.tired-header {
+		border: 3px solid #c6e5fa;
+		padding: 10px;
+		font-size: 52px;
+		color: #fff;
+		display: block;
+		width: 550px;
+		text-align: center;
+		border-radius: 20px;
+		margin: auto;
+		position: relative;
+		&:after {
+			content: "";
+			border-right: 3px solid #c6e5fa;
+			border-bottom: 3px solid #c6e5fa;
+			width: 50px;
+			height: calc(100% + 26px);
+			position: absolute;
+			right: 0;
+			left: -50px;
+			margin: auto;
+			top: 83px;
+			border-radius: 0 0px 20px 0;
+		}
+	}
+	.tired-content {
+		font-size: 24px;
+		color: #fff;
+		margin-top: 135px;
+		padding: 0 210px;
+		line-height: 1.35em;
+		font-weight: 300;
+		position: relative;
+		letter-spacing: .7px;
+		&__img {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			width: 130px;
+			height: 130px;
+			border-radius: 100%;
+			background: #43a2dc;
+			z-index: 1;
+			// border: 1px solid #c6e5fa;
+		}
+
+		&:nth-child(odd) .tired-content__img {	
+			left: 0;
+		}
+		&:nth-child(even) .tired-content__img {
+			right: 0;
+		}
+		&:nth-child(odd) {
+			&:after {
+				content: '';
+				border-left: 3px solid #c6e5fa;
+				border-top: 3px solid #c6e5fa;
+				border-bottom:  3px solid #c6e5fa;
+				width: calc(55% - 70px);
+				height: calc(100% + 150px);
+				position: absolute;
+				left: 65px;
+				top: -75px;
+				border-radius: 20px 0 0 20px;
+			}
+		} 
+		&:nth-child(even) {
+			&:after {
+				content: '';
+				border-right: 3px solid #c6e5fa;
+				border-top: 3px solid #c6e5fa;
+				border-bottom:  3px solid #c6e5fa;
+				width: calc(55% - 70px);
+				height: calc(100% + 114px);
+				position: absolute;
+				right: 65px;
+				top: -57px;
+				border-radius: 0 20px 20px 0px;
+			}
+		} 
+		&:first-child {
+			margin-top: 181px;
+			&:after {
+				width: calc(50% - 100px);
+			}
+		}
+		&:last-child {
+			&:before {
+				content: "";
+				border-left: 3px solid #c6e5fa;
+				border-top: 3px solid #c6e5fa;
+				width: 50px;
+				height: 120px;
+				position: absolute;
+				right: 0;
+				left: 0;
+				margin: auto;
+				bottom: -183px;
+				border-radius: 20px 0 0 0;
+			}
+			&:after {
+				width: calc(50% - 80px);
+			}
+		}
+ 	}
+}

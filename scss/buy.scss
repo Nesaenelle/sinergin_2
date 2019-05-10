@@ -9,6 +9,7 @@
     .title {
         color: $c-white;
         font-size: 50px;
+        font-weight: 400;
         letter-spacing: 1px;
 
         @media screen and (max-width: 1200px) {
@@ -385,14 +386,14 @@
     }
 
     .cell {
-        padding: 33px 71px 51px 71px;
+        padding: 33px 51px 51px 51px;
         border-radius: 20px;
         background: $c-semi-dark-blue;
         display: flex;
         position: relative;
         flex-wrap: wrap;
         width: 80%;
-        margin-top: 167px;
+        margin-top: 177px;
         letter-spacing: 1px;
 
         @media screen and (max-width: 980px) {
@@ -409,6 +410,7 @@
             color: $c-white;
             font-size: 50px;
             width: 100%;
+            font-weight: 400;
 
             @media screen and (max-width: 1200px) {
                 font-size: 42px;
@@ -465,7 +467,7 @@
     }
 
     &--top {
-        padding: 123px 0 157px 0;
+        padding: 112px 0 174px 0;
 
         @media screen and (max-width: 600px) {
             padding-bottom: 40px !important;
@@ -515,7 +517,7 @@
     }
 
     &--middle {
-        background: #86a6d7;
+        background: #669ed1;
         padding: 123px 0 123px;
 
         .buy-section__product-img {
@@ -528,7 +530,7 @@
         .wrapper {
             .title {
                 font-size: 44px;
-                padding-right: 42px;
+                padding-right: 0px;
 
                 @media screen and (max-width: 1200px) {
                     font-size: 38px;

@@ -41,7 +41,12 @@ var app = new Vue({
     el: '#app',
     data: {
         showMenu: false,
-        onTop: false
+        onTop: false,
+        testStep: 0,
+        disableTest: false,
+        testValue1: null,
+        testValue2: null,
+        testValue3: null,
     },
     mounted() {
         [].forEach.call(document.querySelectorAll('img[data-src]'), (img) => {
@@ -76,7 +81,7 @@ var app = new Vue({
             }
         })
 
-        $('.hypothesis-list__item_text:first').slideDown(0);
+        // $('.hypothesis-list__item_text:first').slideDown(0);
 
         this.headerCheck();
         $(document).on('scroll', () => {
@@ -85,7 +90,7 @@ var app = new Vue({
         $(window).on('click', (e) => {
             var modal = $('.modal.opened');
 
-            if (modal && e.target.contains(modal[0])) {
+            if (modal.length && e.target.contains(modal[0])) {
                 this.closeModal();
             }
         });
@@ -95,7 +100,7 @@ var app = new Vue({
         });
 
         window.addEventListener('click', (e) => {
-            if (!this.$refs.menu.contains(e.target)) {
+            if (this.$refs.menu && !this.$refs.menu.contains(e.target)) {
                 this.showMenu = false;
             }
         });
@@ -118,18 +123,18 @@ var app = new Vue({
             });
         }, false);
 
-        window.addEventListener('resize', () => {
-            $('.efficiency-tooltip').each((i, element) => {
-                this.tooltipPosition(element);
-            });
-        });
+        // window.addEventListener('resize', () => {
+        //     $('.efficiency-tooltip').each((i, element) => {
+        //         this.tooltipPosition(element);
+        //     });
+        // });
 
-        $('.efficiency-tooltip').each((i, element) => {
-            this.tooltipPosition(element);
-        });
-        $('.efficiency-tooltip').on('mouseenter', (e) => {
-            this.tooltipPosition(e.currentTarget);
-        });
+        // $('.efficiency-tooltip').each((i, element) => {
+        //     this.tooltipPosition(element);
+        // });
+        // $('.efficiency-tooltip').on('mouseenter', (e) => {
+        //     this.tooltipPosition(e.currentTarget);
+        // });
     },
     methods: {
         goTop() {
@@ -183,23 +188,31 @@ var app = new Vue({
             $('.modal').removeClass('opened');
             $('.main-wrapper').removeClass('opened');
         },
-
-        tooltipPosition(element) {
-            let $tooltip = $(element);
-            let $content = $(element).find('.efficiency-tooltip__content');
-            let boundingTooltip = $tooltip[0].getBoundingClientRect();
-            let boundingContent = $content[0].getBoundingClientRect();
-
-            let hasSpaceRight = (boundingTooltip.right + boundingContent.width < window.innerWidth - 20);
-
-            if (hasSpaceRight) {
-                $content.addClass('left');
-                $content.removeClass('right');
-
-            } else {
-                $content.addClass('right');
-                $content.removeClass('left');
-            }
+        nextTest() {
+            var vm = this;
+            vm.disableTest = true;
+            setTimeout(() => {
+                vm.testStep++;
+                vm.disableTest = false;
+            }, 500);
         }
+
+        // tooltipPosition(element) {
+        //     let $tooltip = $(element);
+        //     let $content = $(element).find('.efficiency-tooltip__content');
+        //     let boundingTooltip = $tooltip[0].getBoundingClientRect();
+        //     let boundingContent = $content[0].getBoundingClientRect();
+
+        //     let hasSpaceRight = (boundingTooltip.right + boundingContent.width < window.innerWidth - 20);
+
+        //     if (hasSpaceRight) {
+        //         $content.addClass('left');
+        //         $content.removeClass('right');
+
+        //     } else {
+        //         $content.addClass('right');
+        //         $content.removeClass('left');
+        //     }
+        // }
     }
 });

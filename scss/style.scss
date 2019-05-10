@@ -6,8 +6,11 @@
 @import "buttons.scss";
 @import "how-to-slow.scss";
 @import "aging.scss";
-@import "theories.scss";
+@import "lazy.scss";
+// @import "theories.scss";
 @import "free-radicals.scss";
+@import "tired.scss";
+@import "factors.scss";
 @import "antioxidants.scss";
 @import "efficiency.scss";
 @import "buy.scss";
@@ -16,6 +19,10 @@
 
 body {
   font-family: "Panton", sans-serif;
+}
+
+[v-cloak] {
+  display: none;
 }
 
 .icon {

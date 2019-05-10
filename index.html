@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <div class="main-wrapper">
             <header>
                 <div class="container">
@@ -67,58 +67,202 @@
                         <p class="animate" v-animate="'slide-right'">Вам не хочется вставать по утрам? Жизнь перестала играть яркими красками? Нет сил на общение с семьей, друзьями? Давно не посвящали себя любимому увлечению? Возможно, стоит признать, что вы устали! Это не слабость характера и не лень, а состояние, которое рано или поздно возникает у перегруженного делами и ответственностью человека. </p>
                     </div>
                 </section>
-                <section>
+                <section id="lazy-section">
                     <div class="container">
-                        <h2>Лень или усталость? </h2>
-                        <div>Проверьте себя по тесту Китаоки!</div>
-                        <div>
-                            <div>Внимательно посмотрите на картинку и выберите верный вариант ответа:</div>
-                            <div><img src="img/test1.png" alt="">
-                                <ul>
-                                    <li>Картинка неподвижна</li>
-                                    <li>Картинка медленно движется</li>
-                                    <li>Картинка быстро движется</li>
-                                </ul>
+                        <h2 class="title animate"  v-animate="'slide-left'">Лень или усталость? </h2>
+                        <div class="label animate "  v-animate="'slide-right'">Проверьте себя по тесту Китаоки!</div>
+                        <div class="test-block">
+                            <div class="test-block__header" v-if="testStep < 2">Внимательно посмотрите на картинку и выберите верный вариант ответа:</div>
+                            <div class="test-block__header" v-if="testStep > 2">Результут: </div>
+                            <div class="test-block__content" v-if="testStep === 0">
+                                <img src="img/test1.png" alt="">
+                                <div>
+                                    <label class="radio">
+                                        <input type="radio" v-model.number="testValue1" value="1" @click="nextTest()" :disabled="disableTest">
+                                        <div class="radio--icon"></div>
+                                        Картинка неподвижна
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" v-model.number="testValue1" value="2" @click="nextTest()" :disabled="disableTest">
+                                        <div class="radio--icon"></div>
+                                        Картинка медленно движется
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" v-model.number="testValue1" value="3" @click="nextTest()" :disabled="disableTest">
+                                        <div class="radio--icon"></div>
+                                        Картинка быстро движется
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="test-block__content" v-if="testStep === 1">
+                                <img src="img/test2.png" alt="">
+                                <div>
+                                    <label class="radio">
+                                        <input type="radio" v-model.number="testValue2" value="1" @click="nextTest()" :disabled="disableTest">
+                                        <div class="radio--icon"></div>
+                                        Картинка неподвижна
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" v-model.number="testValue2" value="2" @click="nextTest()" :disabled="disableTest">
+                                        <div class="radio--icon"></div>
+                                        Картинка медленно движется
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" v-model.number="testValue2" value="3" @click="nextTest()" :disabled="disableTest">
+                                        <div class="radio--icon"></div>
+                                        Картинка быстро движется
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="test-block__content" v-if="testStep === 2">
+                                <img src="img/test3.png" alt="">
+                                <div>
+                                    <label class="radio">
+                                        <input type="radio" v-model.number="testValue3" value="1" @click="nextTest()" :disabled="disableTest">
+                                        <div class="radio--icon"></div>
+                                        Картинка неподвижна
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" v-model.number="testValue3" value="2" @click="nextTest()" :disabled="disableTest">
+                                        <div class="radio--icon"></div>
+                                        Картинка медленно движется
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" v-model.number="testValue3" value="3" @click="nextTest()" :disabled="disableTest">
+                                        <div class="radio--icon"></div>
+                                        Картинка быстро движется
+                                    </label>
+                                </div>
+                            </div>
+            
+                            <div class="test-block__content result" v-if="testStep === 3 && testValue3 === 1">
+                                <img src="img/nonono.svg" alt="">
+                                <div>
+                                    <div class="test-block__result">Это сигнал тревоги, который говорит о стрессовом состоянии, усталости и высокой вероятности нервного срыва. Но исправить ситуацию в ваших силах, если начать прямо сейчас!</div>
+                                </div>
+                            </div>
+                            <div class="test-block__content result" v-if="testStep === 3 && testValue3 === 2">
+                                <img src="img/no.svg" alt="">
+                                <div>
+                                    <div class="test-block__result">Внимание, вы подошли к критической точке! Пора задуматься об отдыхе, как физическом, так и эмоциональном. Если устроить себе полноценные каникулы пока не получается, начните хотя бы с 8-часового сна и приема антиоксидантов.</div>
+                                </div>
+                            </div>
+                            <div class="test-block__content result" v-if="testStep === 3 && testValue3 === 3">
+                                <img src="img/yep_1.svg" alt="">
+                                <div>
+                                    <div class="test-block__result">Вам не о чем беспокоиться, психическое здоровье в полном порядке. Такой результат возможен у человека уравновешенного, спокойного и отдохнувшего. Но даже самым уравновешенным людям стоит знать, что делать, когда подступает усталость, и как восстановить запас энергии.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="tiredness__list">
+                            <h2 class="title animate"  v-animate="'slide-left'">Как распознать усталость?</h2>
+                            <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                                <img src="img/slepee.svg" alt="">
+                                <div>
+                                    <h3>Сонливость и вялость</h3>
+                                    <p>По утрам вы с трудом просыпаетесь и ощущаете себя уже уставшим. Часто чувствуете себя так, будто долго занимались физической работой.</p>
+                                </div>
+                            </div>
+                              <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                                <img src="img/bomb.svg" alt="">
+                                <div>
+                                    <h3>Психическое и эмоциональное истощение</h3>
+                                    <p>Замкнутость, раздражительность, нежелание разговаривать и общаться.</p>
+                                </div>
+                            </div>
+                              <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                                <img src="img/snail.svg" alt="">
+                                <div>
+                                    <h3>Время реакции</h3>
+                                    <p>Вы медленно реагируете на происходящее, включая опасные для жизни ситуации. Роняете предметы, чувствуете себя неуклюжим.</p>
+                                </div>
+                            </div>
+                              <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                                <img src="img/pain.svg" alt="">
+                                <div>
+                                    <h3>Боль в мышцах</h3>
+                                    <p>Без видимой причины вы ощущаете дискомфорт в мышцах, суставах, особенно рук и ног. Вам не хочется двигаться.</p>
+                                </div>
+                            </div>
+                              <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                                <img src="img/hardwork.svg" alt="">
+                                <div>
+                                    <h3>Низкая работоспособность</h3>
+                                    <p>Вы стали медленнее выполнять свою обычную работу. Можете отказаться от обязанностей по дому, вам не хватает сил на хобби или уход за собой.</p>
+                                </div>
+                            </div>
+                              <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                                <img src="img/concentration.svg" alt="">
+                                <div>
+                                    <h3>Ухудшение концентрации и внимания</h3>
+                                    <p>Забывчивость, рассеянность, плохая кратковременная память, сложно сосредоточиться на том, что читаете или слушаете.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section>
+                <section id="tired-section">
                     <div class="container">
-                        <h2>Как распознать усталость?</h2>
-                        <div><img src="img/slepee.svg" alt="">
-                            <h3>Сонливость и вялость</h3>По утрам вы с трудом просыпаетесь и ощущаете себя уже уставшим. Часто чувствуете себя так, будто долго занимались физической работой.
+                        <div class="tired-header">
+                            Почему мы устаем?
                         </div>
-                        <div><img src="img/bomb.svg" alt="">
-                            <h3>Психическое и эмоциональное истощение</h3>Замкнутость, раздражительность, нежелание разговаривать и общаться.
-                        </div>
-                        <div><img src="img/snail.svg" alt="">
-                            <h3>Время реакции</h3>Вы медленно реагируете на происходящее, включая опасные для жизни ситуации. Роняете предметы, чувствуете себя неуклюжим.
-                        </div>
-                        <div><img src="img/pain.svg" alt="">
-                            <h3>Боль в мышцах</h3>Без видимой причины вы ощущаете дискомфорт в мышцах, суставах, особенно рук и ног. Вам не хочется двигаться.
-                        </div>
-                        <div><img src="img/hardwork.svg" alt="">
-                            <h3>Низкая работоспособность</h3>Вы стали медленнее выполнять свою обычную работу. Можете отказаться от обязанностей по дому, вам не хватает сил на хобби или уход за собой.
-                        </div>
-                        <div><img src="img/concentration.svg" alt="">
-                            <h3>Ухудшение концентрации и внимания</h3>Забывчивость, рассеянность, плохая кратковременная память, сложно сосредоточиться на том, что читаете или слушаете.
+                        <div class="tired-wrapper">
+                            <div class="tired-content">
+                                <div class="tired-content__img"><img src="img/lowbatary.svg" alt=""></div>
+                                Мы двигаемся, едим, спим, думаем, чувствуем. На это тратится энергия. Когда «запасы» энергии падают до 30 %, появляется чувство усталости. Если энергии остается 20 %, усталость полностью парализует активность человека.
+                            </div>
+                            <div class="tired-content">
+                                <div class="tired-content__img"><img src="img/rest.svg" alt=""></div>
+                                В норме организм во время отдыха должен восстановить силы и выработать достаточно энергии на весь день. Если этого не произошло, мы просыпаемся уже с чувством усталости или ощущаем ее к середине дня.
+                            </div>
+                            <div class="tired-content">
+                                <div class="tired-content__img"><img src="img/libra.svg" alt=""></div>
+                                Внешних причин для усталости может быть много: перегрузка, болезнь, стрессы. Но настоящая причина усталости одна: наши клетки не успевают выработать достаточно энергии, потому что нарушен энергетический баланс.
+                            </div>
+                            <div class="tired-content">
+                                <div class="tired-content__img"><img src="img/molecul.svg" alt=""></div>
+                                Одна из главных причин нарушения энергетического баланса – избыток свободных радикалов. <br>
+                                Что такое свободные радикалы? Это активные молекулы, которые возникают при внутриклеточных процессах. В небольших количествах они не опасны и даже нужны организму, но переизбыток свободных радикалов наносит клеткам непоправимый вред. Чрезмерное количество свободных радикалов в организме называют окислительным стрессом.
+                            </div>
                         </div>
                     </div>
                 </section>
-                <section>
+                <section id="free-radicals-section">
                     <div class="container">
-                        <h2>Факторы, которые приводят к образованию избытка свободных радикалов в организме:</h2>
-                        <div><img src="" alt="">Воздействие электромагнитного излучения</div>
-                        <div><img src="" alt="">Постоянные стрессы</div>
-                        <div><img src="" alt="">Загрязнение воздуха выхлопными газами и производственными выбросами </div>
-                        <div><img src="" alt="">Контакт с пестицидами</div>
-                        <div><img src="" alt="">Курение, в том числе пассивное</div>
-                        <div><img src="" alt="">Консерванты в продуктах и косметике</div>
-                        <div><img src="" alt="">Лишний вес</div>
-                        <div><img src="" alt="">Нитраты в продуктах питания</div>
-                        <div><img src="" alt="">Низкая физическая активность</div>
-                        <div><img src="" alt="">Хронические заболевания</div>
+                        <div>
+                            <h2 class="title">Свободные радикалы при окислительном стрессе:</h2>
+                            <ul>
+                                <li><img src="img/!.svg" alt="">забирают часть полезной энергии;</li>
+                                <li><img src="img/!.svg" alt="">нарушают выработку энергии в клетках;</li>
+                                <li><img src="img/!.svg" alt="">повреждают клетки и заставляют организм тратить дополнительную энергию на их восстановление.</li>
+                            </ul>
+                            <div class="info-block">
+                                Чем больше свободных радикалов, тем больше энергии теряется напрасно. В результате наша внутренняя «батарейка» начинает «садиться» быстрее.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="factors-section">
+                    <div class="container">
+                        <h2 class="title">Почему возникает оксидативный стресс?</h2>
+                        <div class="subtitle">
+                            В норме в нашем организме вырабатываются вещества-антиоксиданты, которые регулируют уровень свободных радикалов. Однако в результате воздействия агрессивных факторов свободных радикалов становится все больше, и собственных антиоксидантов не хватает, чтобы нейтрализовать их.
+                        </div>
+                        <h2 class="title">Факторы, которые приводят к образованию избытка свободных радикалов в организме:</h2>
+                        <div class="factor-list">
+                            <div class="factor-list__item"><i class="icon"></i>Воздействие электромагнитного излучения</div>
+                            <div class="factor-list__item"><i class="icon"></i>Постоянные стрессы</div>
+                            <div class="factor-list__item"><i class="icon"></i>Загрязнение воздуха выхлопными газами и производственными выбросами </div>
+                            <div class="factor-list__item"><i class="icon"></i>Контакт с пестицидами</div>
+                            <div class="factor-list__item"><i class="icon"></i>Курение, в том числе пассивное</div>
+                            <div class="factor-list__item"><i class="icon"></i>Консерванты в продуктах и косметике</div>
+                            <div class="factor-list__item"><i class="icon"></i>Лишний вес</div>
+                            <div class="factor-list__item"><i class="icon"></i>Нитраты в продуктах питания</div>
+                            <div class="factor-list__item"><i class="icon"></i>Низкая физическая активность</div>
+                            <div class="factor-list__item"><i class="icon"></i>Хронические заболевания</div>
+                        </div>
                     </div>
                 </section>
                 <section id="antioxidants-section" data-navigation="solution">
@@ -136,12 +280,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div>Принимай антиоксиданты – верни себе продуктивность и энергию!</div>
-                        <div class="antioxidants-images animate" v-animate="'slide-right'">
-                            <!-- <div class="antioxidants-images__item"></div>
+                        <div class="antioxidants-label">Принимай антиоксиданты – верни себе продуктивность и энергию!</div>
+                        <!-- <div class="antioxidants-images animate" v-animate="'slide-right'"> -->
+                        <!-- <div class="antioxidants-images__item"></div>
                                     <div class="antioxidants-images__item"></div> -->
-                            <img data-src="img/girlmid.png" alt="">
-                        </div>
+                        <img data-src="img/girlmid.png" alt="" class="antioxidants-image">
+                        <!-- </div> -->
                     </div>
                 </section>
                 <section class="buy-section buy-section--top" data-navigation="sinergin">
@@ -193,8 +337,8 @@
                                 <div class="antioxidants-groups-list__item--text antioxidants-groups-list__item--text-1 animate" v-animate="'slide-left'">
                                     <p>В нашем организме есть структуры на основе липидов (оболочки клеток и внутриклеточных органелл) и на основе воды (кровь и другие жидкости). Гидрофильные (водорастворимые) антиоксиданты защищают водные среды организма, но не способны проникать в структуры на основе липидов (жиров). Липофильные антиоксиданты, напротив, защищают мембраны клеток, но не способны нейтрализовать свободные радикалы в водных средах.</p>
                                 </div>
-                                <img data-src="img/water.jpg" alt="" class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-1 animate" v-animate="'slide-right'">
-                                <img data-src="img/link.jpg" alt="" class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-2 animate" v-animate="'slide-left'">
+                                <img data-src="img/water.jpg" alt="" class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-1 animate" v-animate="'slide-left'">
+                                <img data-src="img/link.jpg" alt="" class="antioxidants-groups-list__item--img antioxidants-groups-list__item--img-2 animate" v-animate="'slide-right'">
                             </div>
                             <div class="info-block animate" v-animate="'slide-left'">
                                 Синергин содержит комбинацию гидрофильных и липофильных антиоксидантов, чтобы защитить все клетки и ткани организма, а также кровь от вредного действия свободных радикалов.
@@ -315,7 +459,6 @@
                                     <div class="feedback-list__item_details--text">
                                         Применяя Синергин, заметила общее укрепление организма. Стало легче просыпаться по утрам, чувствую бодрость в течение дня.
                                     </div>
-                                    <!-- <div class="feedback-list__item_details--date">20.03.18</div> -->
                                 </div>
                             </div>
                             <div class="feedback-list__item">
@@ -323,7 +466,6 @@
                                     <div class="feedback-list__item_details--text">
                                         Нам с мужем препарат Синергин понравился, появилась бодрость, энергия. Заметили, причем оба, что улучшилось состояние ногтей.
                                     </div>
-                                    <!-- <div class="feedback-list__item_details--date">20.03.18</div> -->
                                 </div>
                                 <div class="feedback-list__item_user">
                                     <div class="feedback-list__item_user--icon"><img data-src="img/comment-icon.svg" alt=""></div>
@@ -341,7 +483,6 @@
                                     <div class="feedback-list__item_details--text">
                                         Препарат замечательный, дает прилив бодрости, улучшает физическое состояние, увеличивает работоспособность.
                                     </div>
-                                    <!-- <div class="feedback-list__item_details--date">20.03.18</div> -->
                                 </div>
                             </div>
                             <div class="feedback-list__item">
@@ -349,7 +490,6 @@
                                     <div class="feedback-list__item_details--text">
                                         Пьем Синергин совместно с супругом, почти месяц. Через 3-4 дня после первого применения почувствовали улучшение в организме, прибавилось энергии, в целом улучшилось состояние. Препарат мне очень нравится, супруг тоже очень доволен.
                                     </div>
-                                    <!-- <div class="feedback-list__item_details--date">20.03.18</div> -->
                                 </div>
                                 <div class="feedback-list__item_user">
                                     <div class="feedback-list__item_user--icon"><img data-src="img/comment-icon.svg" alt=""></div>
@@ -367,10 +507,8 @@
                                     <div class="feedback-list__item_details--text">
                                         Улучшилось настроение. Появилась выносливость в спортивных тренировках. Пропало чувство, что я вечно болею.
                                     </div>
-                                    <!-- <div class="feedback-list__item_details--date">20.03.18</div> -->
                                 </div>
                             </div>
-                            
                         </div>
                         <button class="btn btn-transparent" @click.stop="openModal('feedback')"><img data-src="img/comments.svg" alt=""> ДОБАВИТЬ ОТЗЫВ</button>
                     </div>

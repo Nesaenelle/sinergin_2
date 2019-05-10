@@ -1,6 +1,6 @@
 #antioxidants-section {
     background: $c-semi-dark-blue;
-    padding: 90px 0 0px 0;
+    padding: 110px 0 127px 0;
     // margin-top: 192px;
     position: relative;
 
@@ -37,6 +37,7 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        max-width: 1600px;
 
         @media screen and (max-width: 980px) {
             flex-wrap: wrap;
@@ -45,10 +46,12 @@
 
     .title {
         color: $c-white;
-        // width: 100%;
-        font-size: 52px;
-        letter-spacing: 1.3px;
-        margin-bottom: 49px;
+        width: 70%;
+        font-size: 48px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-bottom: 44px;
+        line-height: 1.24em;
 
         @media screen and (max-width: 1200px) {
             font-size: 42px;
@@ -67,6 +70,17 @@
         }
     }
 
+    .antioxidants-label {
+        padding: 24px 18px 30px 44px;
+        background: #ffdb01;
+        font-size: 36px;
+        color: #22627d;
+        border-radius: 30px;
+        width: 45%;
+        margin-top: 30px;
+        letter-spacing: 1.2px;
+    }
+
     .antioxidants-list {
         width: 65%;
 
@@ -83,8 +97,8 @@
             }
 
             &--img {
-                width: 65px;
-                height: 65px;
+                width: 75px;
+                height: 75px;
                 margin-right: 10px;
                 margin-top: 1px;
                 margin-left: -11px;
@@ -97,7 +111,8 @@
                 font-size: 24px;
                 line-height: 1.35em;
                 font-weight: 300;
-                padding-right: 46px;
+                // padding-right: 165px;
+                width: 55%;
                 letter-spacing: 0.7px;
 
                 @media screen and (max-width: 1200px) {
@@ -120,29 +135,45 @@
         }
     }
 
-    .antioxidants-images {
-        width: 72%;
-
+    .antioxidants-image {
+        position: absolute;
+        right: 36px;
+        width: 1230px;
+        height: 837px;
+        display: block;
+        -o-object-fit: contain;
+        object-fit: contain;
+        bottom: 0;
         @media screen and (max-width: 980px) {
-            width: 100%;
-            margin-top: 30px;
-        }
-
-        img {
-            position: relative;
-            margin-top: -450px;
-            left: 450px;
-            width: 100%;
-            height: 590px;
-            display: block;
-
-            @media screen and (max-width: 980px) {
-                // position: static;
-                // max-height: 300px;        
-                display: none;
-            }
-        }
+            // position: static;
+            // max-height: 300px;        
+            display: none;
+        }        
     }
+
+    // .antioxidants-images {
+    //     width: 72%;
+
+    //     @media screen and (max-width: 980px) {
+    //         width: 100%;
+    //         margin-top: 30px;
+    //     }
+
+    //     img {
+    //         position: absolute;
+    //         margin-top: -450px;
+    //         left: 450px;
+    //         width: 100%;
+    //         height: 590px;
+    //         display: block;
+
+    //         @media screen and (max-width: 980px) {
+    //             // position: static;
+    //             // max-height: 300px;        
+    //             display: none;
+    //         }
+    //     }
+    // }
 
     .antioxidants-help {
         color: $c-white;
@@ -172,7 +203,8 @@
 }
 
 #antioxidants-groups-section {
-    padding: 229px 0 70px 0;
+    overflow: hidden;
+    padding: 150px 0 70px 0;
 
     @media screen and (max-width: 1200px) {
         padding: 120px 0 70px 0;
@@ -184,6 +216,10 @@
 
     @media screen and (max-width: 600px) {
         padding: 120px 0 50px 0;
+    }
+
+    .container {
+        position: relative;
     }
 
     .antioxidants-groups-list {
@@ -237,16 +273,17 @@
                     @media screen and (min-width: 1201px) {
                         &-1 {
                             max-width: 546px;
-                            position: relative;
+                            position: absolute;
                             margin-right: 30px;
-                            margin-top: -106px;
+                            left: -446px;
+                            margin-top: 260px;
                         }
 
                         &-2 {
-                            max-width: 539px;
-                            position: relative;
-                            margin-right: 0px;
-                            margin-top: -160px;
+                            max-width: 400px;
+                            position: absolute;
+                            right: -240px;
+                            margin-top: -40px;
                             margin-left: 8px;
                         }
                     }
@@ -260,6 +297,7 @@
 
                 .antioxidants-groups-list__item--text {
                     align-self: flex-start;
+                    width: 92%;
 
                     @media screen and (max-width: 1200px) {
                         align-self: center;
@@ -283,9 +321,12 @@
             &--title {
                 color: $c-light-blue;
                 font-size: 50px;
-                margin-bottom: 53px;
-                font-weight: 600;
+                margin-bottom: 45px;
+                font-weight: 400;
+                width: 90%;
                 letter-spacing: 1px;
+                position: relative;
+                z-index: 1;
 
                 @media screen and (max-width: 1200px) {
                     font-size: 42px;
@@ -313,6 +354,8 @@
                 line-height: 1.35em;
                 letter-spacing: 0.7px;
                 padding-right: 12px;
+                position: relative;
+                z-index: 1;
 
                 @media screen and (max-width: 1200px) {
                     font-size: 20px;
@@ -444,13 +487,14 @@
         font-size: 33px;
         line-height: 1.2em;
         border-radius: 24px;
-        margin-top: 9px;
-        margin-bottom: 148px;
+        margin-top: 58px;
+        margin-bottom: 106px;
         letter-spacing: 0.1px;
-        padding: 32px 37px 27px 45px;
+        font-weight: 400;
+        padding: 32px 182px 43px 45px;
 
         &+.antioxidants-groups-list__item--title {
-            margin-bottom: 31px;
+            margin-bottom: 7px;
         }
 
         @media screen and (max-width: 1200px) {
