@@ -1,6 +1,19 @@
 #factors-section {
     padding: 100px 0 117px 0px;
 
+
+    @media screen and (max-width: 1200px) {
+        padding: 80px 0 90px 0px;
+    }
+
+    @media screen and (max-width: 980px) {
+        padding: 60px 0 70px 0px;
+    }
+
+    @media screen and (max-width: 768px) {
+        padding: 40px 0 50px 0px;
+    }
+
     .title {
         color: $c-blue;
         font-size: 50px;
@@ -32,6 +45,18 @@
         color: #22627d;
         letter-spacing: 0.7px;
         line-height: 1.4em;
+
+        @media screen and (max-width: 1200px) {
+            font-size: 22px;
+        }
+
+        @media screen and (max-width: 980px) {
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: 600px) {
+            font-size: 18px;
+        }
     }
 
     .factor-list {
@@ -50,22 +75,57 @@
             margin-top: 62px;
             padding-right: 60px;
 
+            @media screen and (max-width: 1200px) {
+                font-size: 24px;
+                padding-right: 20px;
+
+                br {
+                    display: none;
+                }
+            }
+
+            @media screen and (max-width: 980px) {
+                font-size: 20px;
+            }
+
+            @media screen and (max-width: 768px) {
+                font-size: 18px;
+                // flex-wrap: wrap;
+                // text-align: center;
+                padding: 0 0 0 0;
+                width: 100%;
+            }
+
             .icon {
                 margin-right: 30px;
                 display: block;
                 width: 120px;
                 min-width: 120px;
                 height: 120px;
-            }
-            &:nth-child(odd) .icon{
-            	background: url(../img/sprite1.svg);
-            	background-size: cover;
+
+                @media screen and (max-width: 1200px) {
+                    width: 100px;
+                    min-width: 100px;
+                    height: 100px;
+                }
+
+                @media screen and (max-width: 980px) {
+                    width: 80px;
+                    min-width: 80px;
+                    height: 80px;
+                }
             }
 
-            &:nth-child(even) .icon{
-            	background: url(../img/sprite2.svg);
-            	background-size: cover;
+            &:nth-child(odd) .icon {
+                background: url(../img/sprite1.svg);
+                background-size: cover;
             }
+
+            &:nth-child(even) .icon {
+                background: url(../img/sprite2.svg);
+                background-size: cover;
+            }
+
             &:nth-child(1) .icon {
                 background-position: 0 0px;
             }
@@ -76,32 +136,98 @@
 
             &:nth-child(3) .icon {
                 background-position: 0 -188px;
+
+                @media screen and (max-width: 1200px) {
+                    background-position: 0 -156px;
+                }
+
+                @media screen and (max-width: 980px) {
+                    background-position: 0 -125px;
+                }
             }
 
             &:nth-child(4) .icon {
                 background-position: 0 -188px;
+
+                @media screen and (max-width: 1200px) {
+                    background-position: 0 -156px;
+                }
+
+                @media screen and (max-width: 980px) {
+                    background-position: 0 -125px;
+                }
             }
 
             &:nth-child(5) .icon {
                 background-position: 0 -375px;
+
+                @media screen and (max-width: 1200px) {
+                    background-position: 0 -312px;
+                }
+
+                @media screen and (max-width: 980px) {
+                    background-position: 0 -250px;
+                }
             }
 
             &:nth-child(6) .icon {
                 background-position: 0 -375px;
+
+                @media screen and (max-width: 1200px) {
+                    background-position: 0 -312px;
+                }
+
+                @media screen and (max-width: 980px) {
+                    background-position: 0 -250px;
+                }
             }
 
             &:nth-child(7) .icon {
                 background-position: 0 -562px;
+
+                @media screen and (max-width: 1200px) {
+                    background-position: 0 -468px;
+                }
+
+                @media screen and (max-width: 980px) {
+                    background-position: 0 -374px;
+                }
             }
 
             &:nth-child(8) .icon {
                 background-position: 0 -562px;
+
+                @media screen and (max-width: 1200px) {
+                    background-position: 0 -468px;
+                }
+
+                @media screen and (max-width: 980px) {
+                    background-position: 0 -374px;
+                }
             }
+
             &:nth-child(9) .icon {
                 background-position: 0 -748px;
+
+                @media screen and (max-width: 1200px) {
+                    background-position: 0 -624px;
+                }
+
+                @media screen and (max-width: 980px) {
+                    background-position: 0 -499px;
+                }
             }
+
             &:nth-child(10) .icon {
                 background-position: 0 -748px;
+
+                @media screen and (max-width: 1200px) {
+                    background-position: 0 -624px;
+                }
+
+                @media screen and (max-width: 980px) {
+                    background-position: 0 -499px;
+                }
             }
         }
     }

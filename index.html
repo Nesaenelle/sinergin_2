@@ -211,20 +211,28 @@
                         <div class="tired-wrapper">
                             <div class="tired-content">
                                 <div class="tired-content__img"><img src="img/lowbatary.svg" alt=""></div>
-                                Мы двигаемся, едим, спим, думаем, чувствуем. На это тратится энергия. Когда «запасы» энергии падают до 30 %, появляется чувство усталости. Если энергии остается 20 %, усталость полностью парализует активность человека.
+                                <p class="animate" v-animate="'slide-right'">
+                                    Мы двигаемся, едим, спим, думаем, чувствуем. На это тратится энергия. Когда «запасы» энергии падают до 30 %, появляется чувство усталости. Если энергии остается 20 %, усталость полностью парализует активность человека.
+                                </p>
                             </div>
                             <div class="tired-content">
                                 <div class="tired-content__img"><img src="img/rest.svg" alt=""></div>
-                                В норме организм во время отдыха должен восстановить силы и выработать достаточно энергии на весь день. Если этого не произошло, мы просыпаемся уже с чувством усталости или ощущаем ее к середине дня.
+                                <p class="animate" v-animate="'slide-left'">
+                                    В норме организм во время отдыха должен восстановить силы и выработать достаточно энергии на весь день. Если этого не произошло, мы просыпаемся уже с чувством усталости или ощущаем ее к середине дня.
+                                </p>
                             </div>
                             <div class="tired-content">
                                 <div class="tired-content__img"><img src="img/libra.svg" alt=""></div>
+                                <p class="animate" v-animate="'slide-right'">
                                 Внешних причин для усталости может быть много: перегрузка, болезнь, стрессы. Но настоящая причина усталости одна: наши клетки не успевают выработать достаточно энергии, потому что нарушен энергетический баланс.
+                                </p>
                             </div>
                             <div class="tired-content">
                                 <div class="tired-content__img"><img src="img/molecul.svg" alt=""></div>
-                                Одна из главных причин нарушения энергетического баланса – избыток свободных радикалов. <br>
-                                Что такое свободные радикалы? Это активные молекулы, которые возникают при внутриклеточных процессах. В небольших количествах они не опасны и даже нужны организму, но переизбыток свободных радикалов наносит клеткам непоправимый вред. Чрезмерное количество свободных радикалов в организме называют окислительным стрессом.
+                               <p class="animate" v-animate="'slide-left'">
+                                    Одна из главных причин нарушения энергетического баланса – избыток свободных радикалов. <br>
+                                    Что такое свободные радикалы? Это активные молекулы, которые возникают при внутриклеточных процессах. В небольших количествах они не опасны и даже нужны организму, но переизбыток свободных радикалов наносит клеткам непоправимый вред. Чрезмерное количество свободных радикалов в организме называют окислительным стрессом.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -232,13 +240,13 @@
                 <section id="free-radicals-section">
                     <div class="container">
                         <div>
-                            <h2 class="title">Свободные радикалы при окислительном стрессе:</h2>
+                            <h2 class="title animate"  v-animate="'slide-left'">Свободные радикалы при окислительном стрессе:</h2>
                             <ul>
-                                <li><img src="img/!.svg" alt="">забирают часть полезной энергии;</li>
-                                <li><img src="img/!.svg" alt="">нарушают выработку энергии в клетках;</li>
-                                <li><img src="img/!.svg" alt="">повреждают клетки и заставляют организм тратить дополнительную энергию на их восстановление.</li>
+                                <li  class="animate"  v-animate="'slide-up'"><img src="img/!.svg" alt="">забирают часть полезной энергии;</li>
+                                <li  class="animate"  v-animate="'slide-up'"><img src="img/!.svg" alt="">нарушают выработку энергии в клетках;</li>
+                                <li  class="animate"  v-animate="'slide-up'"><img src="img/!.svg" alt="">повреждают клетки и заставляют организм тратить дополнительную энергию на их восстановление.</li>
                             </ul>
-                            <div class="info-block">
+                            <div class="info-block animate"  v-animate="'slide-up'">
                                 Чем больше свободных радикалов, тем больше энергии теряется напрасно. В результате наша внутренняя «батарейка» начинает «садиться» быстрее.
                             </div>
                         </div>
@@ -252,16 +260,16 @@
                         </div>
                         <h2 class="title">Факторы, которые приводят к образованию избытка свободных радикалов в организме:</h2>
                         <div class="factor-list">
-                            <div class="factor-list__item"><i class="icon"></i>Воздействие электромагнитного излучения</div>
-                            <div class="factor-list__item"><i class="icon"></i>Постоянные стрессы</div>
-                            <div class="factor-list__item"><i class="icon"></i>Загрязнение воздуха выхлопными газами и производственными выбросами </div>
-                            <div class="factor-list__item"><i class="icon"></i>Контакт с пестицидами</div>
-                            <div class="factor-list__item"><i class="icon"></i>Курение, в том числе пассивное</div>
-                            <div class="factor-list__item"><i class="icon"></i>Консерванты в продуктах и косметике</div>
-                            <div class="factor-list__item"><i class="icon"></i>Лишний вес</div>
-                            <div class="factor-list__item"><i class="icon"></i>Нитраты в продуктах питания</div>
-                            <div class="factor-list__item"><i class="icon"></i>Низкая физическая активность</div>
-                            <div class="factor-list__item"><i class="icon"></i>Хронические заболевания</div>
+                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Воздействие электромагнитного излучения</div>
+                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Постоянные стрессы</div>
+                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Загрязнение воздуха выхлопными газами и производственными выбросами </div>
+                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Контакт с пестицидами</div>
+                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Курение, в том числе пассивное</div>
+                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Консерванты в продуктах и косметике</div>
+                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Лишний вес</div>
+                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Нитраты в продуктах питания</div>
+                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Низкая физическая активность</div>
+                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Хронические заболевания</div>
                         </div>
                     </div>
                 </section>
