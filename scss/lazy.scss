@@ -327,6 +327,10 @@
                 position: relative;
                 top: 5px;
 
+                @media screen and (max-width: 980px) {
+                    max-width: 100px;
+                }
+
                 @media screen and (max-width: 600px) {
                     margin: 0 auto 20px;
                     max-width: 90px;
