@@ -8,8 +8,12 @@
         padding: 70px 0;
     }
 
+    @media screen and (max-width: 980px) {
+        padding: 60px 0 0 0;
+    }
+
     @media screen and (max-width: 600px) {
-        padding: 50px 0;
+        padding: 50px 0 0 0;
     }
 
     .triangle {
@@ -40,7 +44,8 @@
         max-width: 1600px;
 
         @media screen and (max-width: 980px) {
-            flex-wrap: wrap;
+            // flex-wrap: wrap;
+            display: block;
         }
     }
 
@@ -58,7 +63,8 @@
         }
 
         @media screen and (max-width: 980px) {
-            font-size: 38px;
+            font-size: 34px;
+            width: 100%;
         }
 
         @media screen and (max-width: 600px) {
@@ -79,6 +85,21 @@
         width: 45%;
         margin-top: 30px;
         letter-spacing: 1.2px;
+        @media screen and (max-width: 1200px) {
+            padding: 20px 20px 20px 30px;
+        }
+        @media screen and (max-width: 980px) {
+            // padding: 24px 18px 30px 44px;
+            width: 100%;
+            font-size: 24px;
+            max-width: 400px;
+            margin: 25px auto 0;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: 20px;
+            padding: 15px 25px;
+            border-radius: 20px;
+        }
     }
 
     .antioxidants-list {
@@ -102,6 +123,11 @@
                 margin-right: 10px;
                 margin-top: 1px;
                 margin-left: -11px;
+
+                @media screen and (max-width: 980px) {
+                    width: 55px;
+                    height: 55px;
+                }
             }
 
             &--text {
@@ -121,11 +147,13 @@
 
                 @media screen and (max-width: 980px) {
                     font-size: 18px;
+                    width: 80%;
                 }
 
                 @media screen and (max-width: 600px) {
                     font-size: 16px;
                     padding-right: 0;
+                    width: 100%;
                 }
 
                 @media screen and (max-width: 475px) {
@@ -144,11 +172,18 @@
         -o-object-fit: contain;
         object-fit: contain;
         bottom: 0;
+        pointer-events: none;
+
         @media screen and (max-width: 980px) {
             // position: static;
             // max-height: 300px;        
-            display: none;
-        }        
+            // display: none;
+            position: static;
+            margin: auto;
+            height: 407px;
+            width: 400px;
+            display: block;
+        }
     }
 
     // .antioxidants-images {
@@ -175,31 +210,31 @@
     //     }
     // }
 
-    .antioxidants-help {
-        color: $c-white;
-        margin-top: 68px;
-        font-size: 28px;
-        font-family: Proxima-Nova, sans-serif;
-        letter-spacing: 0.5px;
+    // .antioxidants-help {
+    //     color: $c-white;
+    //     margin-top: 68px;
+    //     font-size: 28px;
+    //     font-family: Proxima-Nova, sans-serif;
+    //     letter-spacing: 0.5px;
 
-        @media screen and (max-width: 1200px) {
-            font-size: 25px;
-            margin-top: 50px;
-        }
+    //     @media screen and (max-width: 1200px) {
+    //         font-size: 25px;
+    //         margin-top: 50px;
+    //     }
 
-        @media screen and (max-width: 980px) {
-            margin-top: 30px;
-            font-size: 20px;
-        }
+    //     @media screen and (max-width: 980px) {
+    //         margin-top: 30px;
+    //         font-size: 20px;
+    //     }
 
-        @media screen and (max-width: 600px) {
-            font-size: 16px;
-        }
+    //     @media screen and (max-width: 600px) {
+    //         font-size: 16px;
+    //     }
 
-        @media screen and (max-width: 475px) {
-            text-align: center;
-        }
-    }
+    //     @media screen and (max-width: 475px) {
+    //         text-align: center;
+    //     }
+    // }
 }
 
 #antioxidants-groups-section {
