@@ -4,16 +4,30 @@
     background-size: cover;
     padding: 88px 0;
 
+    @media screen and (max-width: 1440px) {
+        background-position: 30%;
+    }
+
     @media screen and (max-width: 1200px) {
-        padding: 0px 0 150px 0px;
+        // padding: 0px 0 150px 0px;
+        background-position: 40%;
+    }
+
+    @media screen and (max-width: 980px) {
+        background-position: 50%;
+    }
+
+    @media screen and (max-width: 768px) {
+        background: #dcd2c8;
+        padding: 50px 0;
     }
 
     @media screen and (max-width: 600px) {
-        padding: 0px 0 150px 0px;
+        // padding: 0px 0 150px 0px;
     }
 
     @media screen and (max-width: 480px) {
-        padding: 0px 0 150px 0px;
+        // padding: 0px 0 150px 0px;
     }
 
     .container {
@@ -24,6 +38,18 @@
 
         &>div {
             width: 41.5%;
+
+            @media screen and (max-width: 1200px) {
+                width: 60%;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+                padding: 0 40px;
+            }
+            @media screen and (max-width: 600px) {
+                padding: 0 20px;
+            }
         }
     }
 
