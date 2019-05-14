@@ -120,7 +120,7 @@ var directive = Vue.directive('animate', {
         function update() {
             if ((0, _Utils.isInViewport)(el, 50)) {
                 el.classList.add(binding.value);
-                if (binding.arg === 'once') {
+                if (binding.modifiers.once) {
                     once = true;
                 }
             } else {

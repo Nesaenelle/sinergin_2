@@ -2,12 +2,12 @@ header {
     position: fixed;
     width: 100%;
     background: #fff;
-    height: 188px;
+    height: 120px;
     transition: 0.2s;
     z-index: 999;
 
     @media screen and (max-width: 1200px) {
-        height: 120px;
+        height: 100px;
     }
 
     @media screen and (max-width: 600px) {
@@ -19,16 +19,16 @@ header {
     }
 
     &.fixed {
-        height: 100px;
+        height: 90px;
         box-shadow: 0 0 20px -5px #000;
 
         .dropdown-menu.opened {
             @media screen and (max-width: 1200px) {
-                top: 100px;
+                top: 90px;
             }
 
             @media screen and (max-width: 600px) {
-                top: 90px;
+                top: 80px;
             }
 
             @media screen and (max-width: 480px) {
@@ -37,11 +37,11 @@ header {
         }
 
         @media screen and (max-width: 1200px) {
-            height: 100px;
+            height: 90px;
         }
 
         @media screen and (max-width: 600px) {
-            height: 90px;
+            height: 80px;
         }
 
         @media screen and (max-width: 480px) {
@@ -72,7 +72,7 @@ header {
         padding: 10px 10px 8px;
         background: $c-dark-blue;
         color: $c-white;
-        margin-top: 22px;
+        margin-top: 17px;
         width: 162px;
         border-radius: 20px;
 
@@ -314,7 +314,7 @@ header {
         &.opened {
             opacity: 1;
             visibility: visible;
-            top: 120px;
+            top: 100px;
 
             @media screen and (max-width: 600px) {
                 top: 90px;

@@ -113,12 +113,12 @@
 
 
             @media screen and (max-width: 1200px) {
-                font-size: 32px;
+                font-size: 28px;
                 padding: 28px 130px 28px 38px;
             }
 
             @media screen and (max-width: 980px) {
-                font-size: 28px;
+                font-size: 24px;
                 padding: 20px 100px 20px 30px;
             }
 
@@ -319,6 +319,9 @@
 
     .tiredness__list {
         margin-top: 97px;
+        @media screen and (max-width: 1200px) {
+            margin-top: 60px;
+        }
 
         .title {
             color: $c-blue;

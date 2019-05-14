@@ -178,6 +178,10 @@
         bottom: 0;
         pointer-events: none;
 
+        @media screen and (max-width: 1860px) {
+            right: -246px;
+        }
+
         @media screen and (max-width: 1600px) {
             right: -236px;
         }
@@ -185,6 +189,7 @@
         @media screen and (max-width: 1440px) {
             right: -300px;
             width: 1000px;
+            height: 829px;
         }
 
         @media screen and (max-width: 1200px) {
@@ -353,6 +358,7 @@
                 }
 
                 .antioxidants-groups-list__item--img {
+
                     @media screen and (min-width: 1201px) {
                         &-1 {
                             max-width: 546px;
@@ -368,6 +374,18 @@
                             right: -240px;
                             margin-top: -40px;
                             margin-left: 8px;
+                        }
+                    }
+
+                    @media screen and (max-width: 1600px) and (min-width: 1201px) {
+                        &-1 {
+                            left: -200px;
+                            max-width: 440px;
+                        }
+
+                        &-2 {
+                            max-width: 300px;
+                            right: -60px;
                         }
                     }
 

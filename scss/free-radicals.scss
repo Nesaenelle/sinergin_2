@@ -1,20 +1,20 @@
 #free-radicals-section {
     background: url(../img/tired.jpg);
-    background-position: 20%;
+    background-position: 40%;
     background-size: cover;
     padding: 88px 0;
 
     @media screen and (max-width: 1440px) {
-        background-position: 30%;
+        background-position: 45%;
     }
 
     @media screen and (max-width: 1200px) {
         // padding: 0px 0 150px 0px;
-        background-position: 40%;
+        background-position: 50%;
     }
 
     @media screen and (max-width: 980px) {
-        background-position: 50%;
+        // background-position: 55%;
     }
 
     @media screen and (max-width: 768px) {
@@ -37,7 +37,7 @@
         padding: 0 20px;
 
         &>div {
-            width: 41.5%;
+            width: 50%;
 
             @media screen and (max-width: 1200px) {
                 width: 60%;
@@ -60,7 +60,9 @@
         font-weight: 400;
         letter-spacing: 1px;
         display: inline-flex;
-
+        @media screen and (max-width: 1440px) {
+            font-size: 44px;
+        }
         @media screen and (max-width: 1200px) {
             font-size: 42px;
         }
@@ -85,6 +87,9 @@
             align-items: flex-start;
             letter-spacing: 0.7px;
 
+            @media screen and (max-width: 1200px) {
+                font-size: 22px;
+            }
             @media screen and (max-width: 980px) {
                 font-size: 20px;
             }

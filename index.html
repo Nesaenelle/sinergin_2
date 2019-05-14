@@ -63,7 +63,7 @@
                 </section>
                 <section id="aging-section" data-navigation="reasons">
                     <div class="container">
-                        <h2 class="title animate" v-animate="'slide-left'">Насколько сильно вы устали?</h2>
+                        <h2 class="title">Насколько сильно вы устали?</h2>
                         <p class="animate" v-animate="'slide-right'">Вам не хочется вставать по утрам? Жизнь перестала играть яркими красками? Нет сил на общение с семьей, друзьями? Давно не посвящали себя любимому увлечению? Возможно, стоит признать, что вы устали! Это не слабость характера и не лень, а состояние, которое рано или поздно возникает у перегруженного делами и ответственностью человека. </p>
                     </div>
                 </section>
@@ -72,7 +72,7 @@
                         <h2 class="title animate"  v-animate="'slide-left'">Лень или усталость? </h2>
                         <div class="label animate "  v-animate="'slide-right'">Проверьте себя по тесту Китаоки!</div>
                         <div class="test-block">
-                            <div class="test-block__header" v-if="testStep < 2">Внимательно посмотрите на картинку и выберите верный вариант ответа:</div>
+                            <div class="test-block__header" v-if="testStep <= 2">Внимательно посмотрите на картинку и выберите верный вариант ответа:</div>
                             <div class="test-block__header" v-if="testStep > 2">Результут: </div>
                             <div class="test-block__content" v-if="testStep === 0">
                                 <img src="img/test1.png" alt="">
@@ -157,43 +157,43 @@
                     </div>
                     <div class="container">
                         <div class="tiredness__list">
-                            <h2 class="title animate"  v-animate="'slide-left'">Как распознать усталость?</h2>
-                            <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                            <h2 class="title">Как распознать усталость?</h2>
+                            <div class="tiredness__list_item animate"  v-animate.once="'slide-up'">
                                 <img src="img/slepee.svg" alt="">
                                 <div>
                                     <h3>Сонливость и вялость</h3>
                                     <p>По утрам вы с трудом просыпаетесь и ощущаете себя уже уставшим. Часто чувствуете себя так, будто долго занимались физической работой.</p>
                                 </div>
                             </div>
-                              <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                              <div class="tiredness__list_item animate"  v-animate.once="'slide-up'">
                                 <img src="img/bomb.svg" alt="">
                                 <div>
                                     <h3>Психическое и эмоциональное истощение</h3>
                                     <p>Замкнутость, раздражительность, нежелание разговаривать и общаться.</p>
                                 </div>
                             </div>
-                              <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                              <div class="tiredness__list_item animate"  v-animate.once="'slide-up'">
                                 <img src="img/snail.svg" alt="">
                                 <div>
                                     <h3>Время реакции</h3>
                                     <p>Вы медленно реагируете на происходящее, включая опасные для жизни ситуации. Роняете предметы, чувствуете себя неуклюжим.</p>
                                 </div>
                             </div>
-                              <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                              <div class="tiredness__list_item animate"  v-animate.once="'slide-up'">
                                 <img src="img/pain.svg" alt="">
                                 <div>
                                     <h3>Боль в мышцах</h3>
                                     <p>Без видимой причины вы ощущаете дискомфорт в мышцах, суставах, особенно рук и ног. Вам не хочется двигаться.</p>
                                 </div>
                             </div>
-                              <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                              <div class="tiredness__list_item animate"  v-animate.once="'slide-up'">
                                 <img src="img/hardwork.svg" alt="">
                                 <div>
                                     <h3>Низкая работоспособность</h3>
                                     <p>Вы стали медленнее выполнять свою обычную работу. Можете отказаться от обязанностей по дому, вам не хватает сил на хобби или уход за собой.</p>
                                 </div>
                             </div>
-                              <div class="tiredness__list_item animate"  v-animate="'slide-up'">
+                              <div class="tiredness__list_item animate"  v-animate.once="'slide-up'">
                                 <img src="img/concentration.svg" alt="">
                                 <div>
                                     <h3>Ухудшение концентрации и внимания</h3>
@@ -242,9 +242,9 @@
                         <div>
                             <h2 class="title animate"  v-animate="'slide-left'">Свободные радикалы при окислительном стрессе:</h2>
                             <ul>
-                                <li  class="animate"  v-animate="'slide-up'"><img src="img/!.svg" alt="">забирают часть полезной энергии;</li>
-                                <li  class="animate"  v-animate="'slide-up'"><img src="img/!.svg" alt="">нарушают выработку энергии в клетках;</li>
-                                <li  class="animate"  v-animate="'slide-up'"><img src="img/!.svg" alt="">повреждают клетки и заставляют организм тратить дополнительную энергию на их восстановление.</li>
+                                <li  class="animate"  v-animate.once="'slide-up'"><img src="img/!.svg" alt="">забирают часть полезной энергии;</li>
+                                <li  class="animate"  v-animate.once="'slide-up'"><img src="img/!.svg" alt="">нарушают выработку энергии в клетках;</li>
+                                <li  class="animate"  v-animate.once="'slide-up'"><img src="img/!.svg" alt="">повреждают клетки и заставляют организм тратить дополнительную энергию на их восстановление.</li>
                             </ul>
                             <div class="info-block animate"  v-animate="'slide-up'">
                                 Чем больше свободных радикалов, тем больше энергии теряется напрасно. В результате наша внутренняя «батарейка» начинает «садиться» быстрее.
@@ -254,22 +254,22 @@
                 </section>
                 <section id="factors-section">
                     <div class="container">
-                        <h2 class="title animate" v-animate="'slide-left'">Почему возникает оксидативный стресс?</h2>
+                        <h2 class="title">Почему возникает оксидативный стресс?</h2>
                         <div class="subtitle animate" v-animate="'slide-right'">
                             В норме в нашем организме вырабатываются вещества-антиоксиданты, которые регулируют уровень свободных радикалов. Однако в результате воздействия агрессивных факторов свободных радикалов становится все больше, и собственных антиоксидантов не хватает, чтобы нейтрализовать их.
                         </div>
-                        <h2 class="title animate" v-animate="'slide-left'">Факторы, которые приводят к образованию избытка свободных радикалов в организме:</h2>
+                        <h2 class="title">Факторы, которые приводят к образованию избытка свободных радикалов в организме:</h2>
                         <div class="factor-list">
-                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Воздействие электромагнитного излучения</div>
-                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Постоянные стрессы</div>
-                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Загрязнение воздуха выхлопными газами и производственными выбросами </div>
-                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Контакт с пестицидами</div>
-                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Курение, в том числе пассивное</div>
-                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Консерванты в продуктах и косметике</div>
-                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Лишний вес</div>
-                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Нитраты в продуктах питания</div>
-                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Низкая физическая активность</div>
-                            <div class="factor-list__item animate" v-animate="'slide-up'"><i class="icon"></i>Хронические заболевания</div>
+                            <div class="factor-list__item animate" v-animate.once="'slide-up'"><i class="icon"></i>Воздействие электромагнитного излучения</div>
+                            <div class="factor-list__item animate" v-animate.once="'slide-up'"><i class="icon"></i>Постоянные стрессы</div>
+                            <div class="factor-list__item animate" v-animate.once="'slide-up'"><i class="icon"></i>Загрязнение воздуха выхлопными газами и производственными выбросами </div>
+                            <div class="factor-list__item animate" v-animate.once="'slide-up'"><i class="icon"></i>Контакт с пестицидами</div>
+                            <div class="factor-list__item animate" v-animate.once="'slide-up'"><i class="icon"></i>Курение, в том числе пассивное</div>
+                            <div class="factor-list__item animate" v-animate.once="'slide-up'"><i class="icon"></i>Консерванты в продуктах и косметике</div>
+                            <div class="factor-list__item animate" v-animate.once="'slide-up'"><i class="icon"></i>Лишний вес</div>
+                            <div class="factor-list__item animate" v-animate.once="'slide-up'"><i class="icon"></i>Нитраты в продуктах питания</div>
+                            <div class="factor-list__item animate" v-animate.once="'slide-up'"><i class="icon"></i>Низкая физическая активность</div>
+                            <div class="factor-list__item animate" v-animate.once="'slide-up'"><i class="icon"></i>Хронические заболевания</div>
                         </div>
                     </div>
                 </section>
@@ -562,45 +562,19 @@
                         <div class="reference__info">
                             <div class="reference__info_wrapper">
                                 <div>
-                                    <div id="link-1"> 1. Hernández-Camacho JD, Bernier M, López-Lluch G1, Navas P. Coenzyme Q10
-                                        Supplementation
-                                        in Aging and Disease. Front Physiol. 2018 Feb 5;9:44.</div>
-                                    <div id="link-2">2. Žmitek K, Pogačnik T, Mervic L, Žmitek J1, Pravst I. The effect of dietary
-                                        intake of
-                                        coenzyme Q10 on skin parameters and condition: Results of a randomised,
-                                        placebo-controlled,
-                                        double-blind study. Biofactors. 2017 Jan 2;43(1):132-140.</div>
-                                    <div id="link-3">3. Monacelli F, Acquarone E, Giannotti C Borghi R, Nencioni A5. Vitamin C,
-                                        Aging
-                                        and
-                                        Alzheimer's Disease. Nutrients. 2017 Jun 27;9(7).</div>
-                                    <div id="link-4">4. Bouamama S, Merzouk H, Medjdoub A, Merzouk-Saidi A1, Merzouk SA2. Effects
-                                        of
-                                        exogenous
-                                        vitamins A, C, and E and NADH supplementation on proliferation, cytokines
-                                        release,
-                                        and cell
-                                        redox status of lymphocytes from healthy aged subjects. Appl Physiol Nutr
-                                        Metab.
-                                        2017
-                                        Jun;42(6):579-587</div>
-                                    <div id="link-5">5. Chaudhari K, Sumien N, Johnson L, D'Agostino D, Edwards M, Paxton RJ, Hall
-                                        JR,
-                                        O'Bryant
-                                        S. Vitamin C Supplementation, APOE4 Genotype and Cognitive Functioning in a
-                                        Rural-Dwelling
-                                        Cohort. J Nutr Health Aging. 2016;20(8):841-844.</div>
-                                    <div id="link-6">6. Georgousopoulou EN, Panagiotakos DB2, Mellor DD3, Naumovski N3.
-                                        Tocotrienols,
-                                        health and
-                                        ageing: A systematic review. Maturitas. 2017 Jan;95:55-60.</div>
+                                    <div id="link-1">1. Mizuno K, Tanaka M, Nozaki S et al. Antifatigue effects of coenzyme Q10 during physical fatigue // Nutrition. 2008.  Apr;24(4):293-9. doi: 10.1016/j.nut.2007.12.007.  Epub 2008 Feb 13. </div>
+                                    <div id="link-2">2. Vitamin E. Gale Encyclopedia of Alternative Medicine. 2005. The Gale Group, Inc.</div>
+                                    <div id="link-3">3. Scientific Opinion on the substantiation of health claims related to vitamin C and reduction of tiredness and fatigue (ID 139, 2622), contribution to normal psychological functions (ID 140), regeneration of the reduced form of vitamin E (ID 202), contribution to normal energy‐yielding metabolism (ID 2334, 3196), maintenance of the normal function of the immune system (ID 4321) and protection of DNA, proteins and lipids from oxidative damage (ID 3331) pursuant to Article 13(1) of Regulation (EC) EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA). No 1924/2006. First published: 19 October, 2010 
+                                        <a href="https://doi.org/10.2903/j.efsa.2010.1815">https://doi.org/10.2903/j.efsa.2010.1815</a>
+                                    </div>
+                                    <div id="link-4">4. Kang-Yi Su, Chao Yuan Yu,  Yue-Wen Chen et al. Rutin, a Flavonoid and Principal Component of Saussurea Involucrata, Attenuates Physical Fatigue in a Forced Swimming Mouse Model // International journal of medical sciences. 2014; 11(5): 528–537. </div>
+ 
                                 </div>
                                 <div>
-                                    <div id="link-7">7. Hemilä H. Vitamin E administration may decrease the incidence of pneumonia
-                                        in
-                                        elderly
-                                        males. Clin Interv Aging. 2016 Oct 3;11:1379-1385.</div>
-                                    <div id="link-8">8. Horvath S, Raj K3. DNA methylation-based biomarkers and the epigenetic
+                                    <div id="link-5">5. Julia K. Boehm, David R. Williams, Eric B. Rimm et al. The Association between Optimism and Serum Antioxidants in the Midlife in the United States Study. 2013 Jan; 75(1): 2–10. Published online 2012 Dec 20. doi: 10.1097/PSY.0b013e31827c08a9 </div>
+                                    <div id="link-6">6.  Milaneschi Y, Bandinelli S, Penninx BW et al. The relationship between plasma carotenoids and depressive symptoms in older persons. World Journal of Biological Psychiatry, September 2011. DOI 10.3109/15622975.2011.597876</div>
+                                    <div id="link-7">7. Niu K, Guo H, Kakizaki M. et al. A tomato-rich diet is related to depressive symptoms among an elderly population aged 70 years and over: a population-based, cross-sectional analysis. The Journal of Affective Disorders. 2013 Jan 10;144(1-2):165-70. doi: 10.1016/j.jad.2012.04.040. Epub 2012 Jul 25].</div>
+         <!--                            <div id="link-8">8. Horvath S, Raj K3. DNA methylation-based biomarkers and the epigenetic
                                         clock
                                         theory of
                                         ageing. Nat Rev Genet. 2018 Jun;19(6):371-384.</div>
@@ -624,7 +598,7 @@
                                         Jun;29(6):168-174.</div>
                                     <div id="link-13">13. De Magalhães JP, Passos JF. Stress, cell senescence and organismal ageing.
                                         Mech Ageing
-                                        Dev. 2018 Mar;170:2-9</div>
+                                        Dev. 2018 Mar;170:2-9</div> -->
                                 </div>
                             </div>
                         </div>
@@ -702,7 +676,7 @@
                     <input type="text" placeholder="Город" required maxlength="40">
                     <textarea placeholder="Текст отзыва*" required maxlength="200" required></textarea>
                     <div class="annotation">Пункты обозначенные *, обязательны к заполнению.</div>
-                    <div class="g-recaptcha" data-sitekey="6LfiuZAUAAAAAD6BCbKl1nJ8XFmCZ46ItKDXbbQj"></div>
+                    <div class="g-recaptcha" data-sitekey="6LexZqMUAAAAABAqYkuH_9bjHHsRvbIlP6aqSs4u"></div>
                     <label class="checkbox">
                         <input type="checkbox" required>
                         <i></i>
@@ -721,7 +695,7 @@
                     <input type="email" placeholder="Электронная почта*" required maxlength="40">
                     <textarea placeholder="Задайте вопрос*" required maxlength="200"></textarea>
                     <div class="annotation">Пункты обозначенные *, обязательны к заполнению.</div>
-                    <div class="g-recaptcha" data-sitekey="6LfiuZAUAAAAAD6BCbKl1nJ8XFmCZ46ItKDXbbQj"></div>
+                    <div class="g-recaptcha" data-sitekey="6LexZqMUAAAAABAqYkuH_9bjHHsRvbIlP6aqSs4u"></div>
                     <label class="checkbox">
                         <input type="checkbox" required>
                         <i></i>
