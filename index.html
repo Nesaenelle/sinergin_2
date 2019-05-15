@@ -22,11 +22,11 @@
                     <a class="logo" href="#home" @click.prevent="navigation($event)">СИНЕРГИН <sub>®</sub></a>
                     <nav>
                         <ul>
-                            <li><a href="#reasons" @click.prevent="navigation($event)"> <span> ПРИЧИНЫ СТАРЕНИЯ </span></a></li>
+                            <li><a href="#test" @click.prevent="navigation($event)"> <span> ТЕСТ </span></a></li>
+                            <li><a href="#symptoms" @click.prevent="navigation($event)"> <span> СИМПТОМЫ УСТАЛОСТИ </span></a></li>
+                            <li><a href="#reasons" @click.prevent="navigation($event)"> <span> ПРИЧИНЫ </span></a></li>
                             <li><a href="#solution" @click.prevent="navigation($event)"> <span> РЕШЕНИЕ</span></a></li>
                             <li><a href="#sinergin" @click.prevent="navigation($event)"> <span> СИНЕРГИН</span></a></li>
-                            <li><a href="#efficiency" @click.prevent="navigation($event)"> <span> ДОКАЗАННАЯ
-                                        ЭФФЕКТИВНОСТЬ</span></a></li>
                             <li><a href="#feedback" @click.prevent="navigation($event)"> <span> ОТЗЫВЫ</span></a></li>
                         </ul>
                     </nav>
@@ -39,12 +39,11 @@
                             <button class="btn" @click.stop="openModal('pharmacy')">ГДЕ КУПИТЬ?</button>
                             <nav>
                                 <ul>
-                                    <li><a href="#reasons" @click.prevent="navigation($event)"> <span> ПРИЧИНЫ СТАРЕНИЯ
-                                            </span></a></li>
+                                    <li><a href="#test" @click.prevent="navigation($event)"> <span> ТЕСТ </span></a></li>
+                                    <li><a href="#symptoms" @click.prevent="navigation($event)"> <span> СИМПТОМЫ УСТАЛОСТИ </span></a></li>
+                                    <li><a href="#reasons" @click.prevent="navigation($event)"> <span> ПРИЧИНЫ </span></a></li>
                                     <li><a href="#solution" @click.prevent="navigation($event)"> <span> РЕШЕНИЕ</span></a></li>
                                     <li><a href="#sinergin" @click.prevent="navigation($event)"> <span> СИНЕРГИН</span></a></li>
-                                    <li><a href="#efficiency" @click.prevent="navigation($event)"> <span> ДОКАЗАННАЯ
-                                                ЭФФЕКТИВНОСТЬ</span></a></li>
                                     <li><a href="#feedback" @click.prevent="navigation($event)"> <span> ОТЗЫВЫ</span></a></li>
                                 </ul>
                             </nav>
@@ -61,13 +60,13 @@
                         <img src="img/sinergin.png" alt="">
                     </div>
                 </section>
-                <section id="aging-section" data-navigation="reasons">
+                <section id="aging-section" >
                     <div class="container">
                         <h2 class="title">Насколько сильно вы устали?</h2>
                         <p class="animate" v-animate="'slide-right'">Вам не хочется вставать по утрам? Жизнь перестала играть яркими красками? Нет сил на общение с семьей, друзьями? Давно не посвящали себя любимому увлечению? Возможно, стоит признать, что вы устали! Это не слабость характера и не лень, а состояние, которое рано или поздно возникает у перегруженного делами и ответственностью человека. </p>
                     </div>
                 </section>
-                <section id="lazy-section">
+                <section id="lazy-section" data-navigation="test">
                     <div class="container">
                         <h2 class="title animate"  v-animate="'slide-left'">Лень или усталость? </h2>
                         <div class="label animate "  v-animate="'slide-right'">Проверьте себя по тесту Китаоки!</div>
@@ -155,7 +154,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container">
+                    <div class="container" data-navigation="symptoms">
                         <div class="tiredness__list">
                             <h2 class="title">Как распознать усталость?</h2>
                             <div class="tiredness__list_item animate"  v-animate.once="'slide-up'">
@@ -203,7 +202,7 @@
                         </div>
                     </div>
                 </section>
-                <section id="tired-section">
+                <section id="tired-section" data-navigation="reasons">
                     <div class="container">
                         <div class="tired-header">
                             Почему мы устаем?

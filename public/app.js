@@ -272,7 +272,7 @@ var app = new Vue({
             e.preventDefault();
             var id = e.currentTarget.getAttribute('href').substr(1);
             var elem = document.querySelector('[data-navigation="' + id + '"]');
-            var offset = elem.offsetTop - 99;
+            var offset = elem.offsetTop - 90;
             if (id === 'home') {
                 offset = 0;
             }
